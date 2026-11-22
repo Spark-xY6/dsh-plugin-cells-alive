@@ -12,9 +12,9 @@ This featherweight plugin keeps its entire always-on footprint to **6 non-empty 
 
 ## What It Looks Like in Real Lab Moments
 
-From an unscripted blind comparison after two sleepless weeks of re-checks wiped out an expected positive result:
+From a real blind A/B test on advisor dismissal and a rushed meeting using the latest 1,948-byte rule (no judgmental labels, no anxiety-inducing 3-step checklists, no armchair therapy):
 
-![Late-night setback dialogue showing grounded empathy in Cells Alive?](docs/images/cells-alive-showcase.png)
+![Real-world dialogue showing grounded, low-anxiety empathy in the latest Cells Alive? release](docs/images/cells-alive-showcase.png)
 
 Three more day-to-day scenarios show where the balance holds in practice:
 
