@@ -1,0 +1,39 @@
+name: "🫥 投稿松弛段子 / 文字表情卡 / 原创贴纸"
+description: "分享年轻人喜欢的松弛短句、微信聊天常用神态或原创无版权 SVG 贴纸"
+title: "[段子/贴纸投稿] "
+labels: ["community-meme"]
+body:
+  - type: dropdown
+    id: entry_kind
+    attributes:
+      label: "投稿类型"
+      options:
+        - "松弛短句 / 自嘲段子"
+        - "纯文字表情卡（如 [ 🫥 先到这，出去走两步 ]）"
+        - "原创纯矢量 SVG 贴纸源码（需无外链且无版权风险）"
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: "内容正文（或 SVG 代码）"
+      description: "注：请不要上传有版权争议的商用表情包截图；短句将作为语感种子由模型按语境灵活化用，不会机械复读。"
+      placeholder: "例如：这行代码今天跟我八字不合，先存个断点出去吹吹风。"
+    validations:
+      required: true
+  - type: input
+    id: context_fit
+    attributes:
+      label: "最适合在什么场景下轻轻带出一句？"
+      placeholder: "例如：连着调试四五个小时卡住、或者周末加班收尾时"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "版权与科学底线确认"
+      options:
+        - label: "确认为本人原创或明确 CC0 / MIT 无版权风险内容（非商用表情包搬运）"
+          required: true
+        - label: "不包含拿删数据、P 值美化或学术造假开玩笑的内容"
+          required: true

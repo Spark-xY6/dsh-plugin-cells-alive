@@ -1,0 +1,4 @@
+# DeepSeek Harness profile layer patch for dsh-plugin-cells-alive
+- insert:
+    - id: skill-cells-alive
+      name: 'dsh-plugin-cells-alive'

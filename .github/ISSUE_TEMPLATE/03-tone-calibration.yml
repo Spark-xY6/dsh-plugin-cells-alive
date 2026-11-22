@@ -1,0 +1,29 @@
+name: "🧭 火候校准与翻车反馈"
+description: "哪句话太油腻、太说教、太冷、乱猜身份，或发现了渗入正式论文的风险？告诉我们立刻改"
+title: "[火候校准] "
+labels: ["tone-calibration"]
+body:
+  - type: dropdown
+    id: issue_kind
+    attributes:
+      label: "遇到的问题类型"
+      options:
+        - "太油腻 / 像 AI 写散文或刷烂梗"
+        - "太说教 / 像人文社科课堂分析"
+        - "情绪太浅或太机械（固定三段论 / 复读同一句话）"
+        - "预设情绪或乱猜学生身份"
+        - "严重要求：在正式论文/代码/审稿回复中出现了情感或梗渗入"
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: "原始场景与模型输出片段"
+      placeholder: "粘贴触发问题的那段对话或产物片段（请先脱敏）。"
+    validations:
+      required: true
+  - type: textarea
+    id: suggestion
+    attributes:
+      label: "你觉得改成什么样才更对味？"
+      placeholder: "例如：这里我明明是成果导向提问，希望只保留一句休息提示，把篇幅还给下一步方案。"

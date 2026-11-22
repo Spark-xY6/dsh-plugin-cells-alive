@@ -1,0 +1,59 @@
+name: "💡 投稿科研起落瞬间（失落/阴性/高兴时刻）"
+description: "分享一个真实的科研/研发高低谷瞬间，帮助模型更懂大家真正经历过什么（无需会用 Git）"
+title: "[瞬间投稿] "
+labels: ["community-moment"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        感谢你把自己的真实科研瞬间放进来！请务必隐去真实人名、课题组或未公开实验核心数据。
+  - type: dropdown
+    id: moment_type
+    attributes:
+      label: "这是哪种时刻？"
+      options:
+        - "低谷 / 阴性结果 / 新口径推翻旧结果（退展）"
+        - "高兴 / 首次观察到新奇现象 / 稳稳过关"
+        - "成果导向节点卡壳（毕业/博资考/求职/Tenure/项目交付）"
+    validations:
+      required: true
+  - type: dropdown
+    id: role_stage
+    attributes:
+      label: "当时的身份阶段（可选，用于避免一律按学生对待）"
+      options:
+        - "不便说明 / 通用"
+        - "硕博研究生"
+        - "博士后 / 高校教师 / 科研院所研究员"
+        - "生物医药 / 生信企业研发"
+  - type: textarea
+    id: scenario
+    attributes:
+      label: "当时发生了什么？（已脱敏）"
+      description: "简要写几句背景即可，比如连跑三轮独立重复结果平了，或者显微镜下意外看到对称结构。"
+      placeholder: "例如：把批次协变量加进去重跑之后，上个月看着挺好的差异基因全没过 FDR……"
+    validations:
+      required: true
+  - type: textarea
+    id: avoid_saying
+    attributes:
+      label: "当时最不想听到、最让你出戏的话是什么？"
+      placeholder: "例如：别难过！失败乃成功之母！ / 快删个离群点试试！"
+  - type: textarea
+    id: helpful_line
+    attributes:
+      label: "当时真正能托住你、或让你会心一笑的一句话/方式"
+      placeholder: "例如：帮我确认前面质控已经做干净了，然后提醒我存好参数明天再接着想。"
+    validations:
+      required: true
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: "合规与开源授权确认"
+      options:
+        - label: "我已对导师、同事、单位和未公开数据做脱敏处理"
+          required: true
+        - label: "本投稿不包含诱导学术造假/无依据删样本等违背科学严谨的内容"
+          required: true
+        - label: "我同意以本仓库开源协议（MIT）收录本匿名化素材"
+          required: true

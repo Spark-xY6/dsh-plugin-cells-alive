@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 96" width="280" height="96" fill="none">
+  <rect x="4" y="4" width="272" height="88" rx="18" fill="#FFFBEB" stroke="#F59E0B" stroke-width="2.5"/>
+  <!-- Curious cell with spark -->
+  <path d="M46 26 C61 26, 72 35, 71 50 C70 65, 59 73, 45 72 C30 71, 21 60, 22 47 C23 34, 33 26, 46 26 Z" fill="#FEF3C7" stroke="#0F766E" stroke-width="2.5"/>
+  <circle cx="40" cy="47" r="2.5" fill="#0F172A"/>
+  <circle cx="53" cy="47" r="2.5" fill="#0F172A"/>
+  <circle cx="46.5" cy="57" r="2.4" stroke="#0F766E" stroke-width="2"/>
+  <path d="M68 24 L71 17 L74 24 L81 27 L74 30 L71 37 L68 30 L61 27 Z" fill="#F59E0B"/>
+  <!-- Caption -->
+  <text x="88" y="43" fill="#0F172A" font-size="15" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif">咦，居然真是这样</text>
+  <text x="88" y="65" fill="#78350F" font-size="12" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif">留住好奇心 · 再轻排一轮暗雷</text>
+</svg>

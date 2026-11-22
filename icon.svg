@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" fill="none">
+  <!-- Living cell outer membrane (~10% padding, high contrast on light & dark UI) -->
+  <path d="M64 16 C92 16, 112 34, 110 64 C108 94, 88 112, 62 110 C34 108, 16 88, 18 60 C20 34, 38 16, 64 16 Z" stroke="#14B8A6" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Inner membrane contour -->
+  <path d="M64 27 C84 27, 99 41, 98 64 C97 86, 82 99, 62 98 C42 97, 29 82, 30 61 C31 41, 45 27, 64 27 Z" stroke="#0F766E" stroke-width="2.5" stroke-dasharray="10 6" stroke-linecap="round"/>
+  <!-- Warm living nucleus -->
+  <circle cx="52" cy="54" r="11" fill="#F59E0B" stroke="#B45309" stroke-width="2.5"/>
+  <!-- Gentle living heartbeat / baseline wave -->
+  <path d="M36 74 H52 L58 63 L66 84 L73 70 L78 74 H92" stroke="#2DD4BF" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>

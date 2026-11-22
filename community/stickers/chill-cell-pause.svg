@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 96" width="280" height="96" fill="none">
+  <rect x="4" y="4" width="272" height="88" rx="18" fill="#F0FDFA" stroke="#14B8A6" stroke-width="2.5"/>
+  <!-- Relaxed living cell icon -->
+  <path d="M46 25 C61 25, 72 34, 71 49 C70 64, 59 73, 45 72 C30 71, 21 60, 22 46 C23 33, 33 25, 46 25 Z" fill="#CCFBF1" stroke="#0F766E" stroke-width="2.5"/>
+  <path d="M37 46 Q41 49 45 46" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M49 46 Q53 49 57 46" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round"/>
+  <path d="M41 56 Q47 60 53 56" stroke="#0F766E" stroke-width="2.2" stroke-linecap="round"/>
+  <!-- Caption -->
+  <text x="88" y="43" fill="#0F172A" font-size="15" font-weight="700" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif">先到这，出去走走</text>
+  <text x="88" y="65" fill="#475569" font-size="12" font-family="-apple-system, BlinkMacSystemFont, 'PingFang SC', 'Microsoft YaHei', sans-serif">断点已存好 · 明天再跟它算账</text>
+</svg>

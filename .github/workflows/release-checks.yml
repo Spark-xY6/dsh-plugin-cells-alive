@@ -1,0 +1,68 @@
+name: Release checks
+
+on: [push, pull_request, workflow_dispatch]
+
+permissions:
+  contents: read
+
+jobs:
+  release:
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - os: ubuntu-latest
+            node: '24.9.0'
+            python: '3.10'
+          - os: windows-latest
+            node: '24'
+            python: '3.13'
+    runs-on: ${{ matrix.os }}
+    timeout-minutes: 10
+    env:
+      PYTHON: python
+      PYTHONUTF8: '1'
+      PYTHONDONTWRITEBYTECODE: '1'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: ${{ matrix.node }}
+          package-manager-cache: false
+      - uses: actions/setup-python@v6
+        with:
+          python-version: ${{ matrix.python }}
+      - name: Check micro-rule sync and budget invariants
+        run: python -B -X utf8 scripts/sync_adapters.py --check
+      - name: Verify bundle contract
+        run: node --test tests/dsh_plugin.test.mjs
+      - name: Run de-identification and hygiene release gates
+        run: python -B -X utf8 tests/verify_release.py
+      - name: Dry-run npm package manifest
+        run: npm pack --dry-run
+
+  dsh-host:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    env:
+      PYTHON: python
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+          package-manager-cache: false
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 11.25.0
+      - name: Install the reference DSH host into a separate directory
+        run: npm install --prefix "$RUNNER_TEMP/host" --no-audit --no-fund @deepseek-ai/dsh@0.2.2-rc.5
+      - name: Boot a clean DSH profile and load cells-alive skill
+        run: |
+          package_file=$(npm pack --silent --ignore-scripts --pack-destination "$RUNNER_TEMP")
+          DSH_PLUGIN_SPEC="$RUNNER_TEMP/$package_file" DSH_RUNTIME="$RUNNER_TEMP/host" node tests/dsh-host.mjs

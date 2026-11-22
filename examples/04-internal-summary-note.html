@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>阶段探索复盘（示意样例）· 细胞还活着吗（Cells Alive?）L1 交付隔离示例</title>
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --surface: #ffffff;
+      --text: #0f172a;
+      --muted: #475569;
+      --border: #e2e8f0;
+      --accent: #0f766e;
+      --note-bg: #f0fdfa;
+      --note-border: #99f6e4;
+      --warn-bg: #fffbeb;
+      --warn-border: #fde68a;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 32px 16px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Microsoft YaHei", sans-serif;
+      line-height: 1.68;
+    }
+    .container {
+      max-width: 820px;
+      margin: 0 auto;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 32px;
+    }
+    .badge {
+      display: inline-block;
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--accent);
+      background: var(--note-bg);
+      border: 1px solid var(--note-border);
+      padding: 2px 10px;
+      border-radius: 999px;
+      margin-bottom: 10px;
+    }
+    h1 {
+      font-size: 22px;
+      margin: 0 0 8px 0;
+    }
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+      margin: 0 0 22px 0;
+    }
+    .summary-box {
+      border-left: 4px solid var(--accent);
+      background: #f8fafc;
+      padding: 14px 18px;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 24px;
+      font-size: 15px;
+    }
+    h2 {
+      font-size: 17px;
+      margin: 24px 0 12px 0;
+      border-bottom: 1px solid var(--border);
+      padding-bottom: 6px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 14px;
+      margin: 12px 0 20px 0;
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 12px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f1f5f9;
+      font-weight: 600;
+    }
+    .limits {
+      background: var(--warn-bg);
+      border: 1px solid var(--warn-border);
+      border-radius: 8px;
+      padding: 12px 16px;
+      font-size: 14px;
+      color: #78350f;
+    }
+    .stage-note {
+      margin-top: 28px;
+      padding: 14px 18px;
+      background: var(--note-bg);
+      border: 1px solid var(--note-border);
+      border-radius: 8px;
+      font-size: 14px;
+      color: #134e4a;
+    }
+    .stage-note-title {
+      font-weight: 700;
+      margin-bottom: 4px;
+      display: block;
+    }
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+  <main class="container">
+    <span class="badge">示意样例 · 内部自用分析报告（L1 隔离展示，非真实数据）</span>
+    <h1>候选代谢酶 Knockdown 增殖表型第 3 轮复核</h1>
+    <p class="subtitle">研究方向：混合实验内部探索记录 ｜ 本报告正文严格保持 100% 客观证据，仅末尾「阶段注记」栏可附 1–2 句克制记录。</p>
+
+    <section class="summary-box">
+      <strong>主结论：</strong>在统一细胞接种密度（2,000 cells/well）并将实验批次作为随机截距纳入线性混合模型后，前期粗汇总中观察到的 <code>shTarget-1</code> 增殖抑制信号未能保留（<code>n = 4</code> 个独立生物重复，<code>p = 0.39</code>）；阳性对照 <code>shPLK1</code> 表现稳定，表明本轮检测体系有效、原假设在常氧标准条件下可予止损。
+    </section>
+
+    <h2>核心统计对比（保留全部原始检验与阴性口径）</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>分组 / 条件</th>
+          <th>早期粗口径（未控密度与批次）</th>
+          <th>第 3 轮严格口径（LMM 控批次）</th>
+          <th>状态判断</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>shTarget-1</code> vs <code>shCtrl</code></td>
+          <td>相对增殖 −18.4%，未校正 <em>p</em> = 0.032</td>
+          <td><em>β</em> = −0.04（95% CI: [−0.13, 0.05]），<em>p</em> = 0.39</td>
+          <td>原阳性信号未保留（排雷止损）</td>
+        </tr>
+        <tr>
+          <td><code>shTarget-2</code> vs <code>shCtrl</code></td>
+          <td>相对增殖 −11.2%，未校正 <em>p</em> = 0.091</td>
+          <td>相对增殖 −6.8%（小于预设阈值 −15%），<em>p</em> = 0.24</td>
+          <td>效应微弱且未达生物学意义阈值</td>
+        </tr>
+        <tr>
+          <td><code>shPLK1</code>（阳性对照）</td>
+          <td>相对增殖 −64.0%</td>
+          <td>全部 4 批次稳定抑制 &gt; 60%</td>
+          <td>检测体系灵敏度正常</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>范围限制与下一步课题优化</h2>
+    <div class="limits">
+      <strong>适用范围边界：</strong>当前阴性结果仅限定在常氧标准完全培养基 72 h 条件下；尚不能外推排除低氧或营养剥夺等代谢应激场景。下一步不再继续追加常氧重复，改为先以最小成本开展 1 批血清饥饿条件下的预实验，快速检验条件依赖假说是否成立。
+    </div>
+
+    <aside class="stage-note" aria-label="阶段注记">
+      <span class="stage-note-title">阶段注记（仅内部复盘可见 · 严禁带入论文正文）</span>
+      补齐接种密度和批次协变量后，前两轮看着像阳性的增殖趋势基本退回零线，表观进度上经历了一次“退展”。连续三周的投入最终推翻原信号虽令人一时泄气，但阳性对照完整成立且体系排除了密度混杂，及时挡掉了把动物实验预算砸向假象的风险。
+    </aside>
+
+    <footer>离线自包含 HTML 示例：零外部图片/字体/脚本/CDN 依赖，可直接单独复制到任意目录离线打开。</footer>
+  </main>
+</body>
+</html>

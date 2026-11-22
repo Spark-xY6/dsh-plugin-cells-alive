@@ -1,0 +1,9 @@
+{
+  "name": "cells-alive",
+  "version": "0.1.0",
+  "description": "First we check the cells. Then we check on you. A human-centered life-science companion plugin for grad students, postdocs, faculty, institute researchers, and biotech R&D — supporting outcome-driven milestones, Ethics-of-Care holding, strengths recognition, curiosity protection, and uncompromising rigor.",
+  "author": {
+    "name": "cells-alive contributors"
+  },
+  "license": "MIT"
+}
