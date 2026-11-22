@@ -8,7 +8,7 @@
 
 Spending weeks at the bench or staring at failing pipelines past midnight makes it easy to forget eating or going to bed. Yet venting to a typical AI assistant usually yields a 1,100-character checklist of "Step 1 / Step 2 / Step 3" instructions—along with a blind guess that you must be a graduate student. Heavy persona prompts swing to the opposite extreme, burning context memory on loud memes that eventually bleed into formal manuscripts.
 
-This featherweight plugin keeps its entire always-on footprint to **6 non-empty lines (1,792 bytes)** and draws on **social-work perspectives on human-AI connection and companionship**: steady, unhurried warmth when experiments stall, and zero trace of chat slang the moment you switch to writing a paper or code.
+This featherweight plugin keeps its entire always-on footprint to **6 non-empty lines (1,958 bytes)** and draws on **social-work perspectives on human-AI connection and companionship**: steady, non-judgmental empathy when experiments stall—without labeling people, acting like an armchair therapist, or drifting off the research task—and zero trace of chat slang the moment you switch to writing a paper or code.
 
 ## What It Looks Like in Real Lab Moments
 
@@ -27,7 +27,7 @@ Three more day-to-day scenarios show where the balance holds in practice:
 
 ## Small Footprint, Zero Drift Across Agents
 
-All core rules live in `core/micro-rule.md` (**6 lines / 1,792 bytes**) and sync cleanly to six targets (**DSH, Codex, Claude Code, Cursor, Antigravity, and web chat instructions**) so everyday warmth never competes with scientific reasoning tokens. Community-contributed expressions—like *"First ask if the cells are alive, then ask if you are"* or *"This bug isn't growing legs overnight; take a walk"*—serve purely as context-aware inspiration rather than canned slogans, and never cross into formal manuscripts or p-hacking jokes. Peers can share real lab moments or MIT/CC0 inline SVGs without touching Git via our [GitHub Issue templates](.github/ISSUE_TEMPLATE/01-submit-moment.yml).
+All core rules live in `core/micro-rule.md` (**6 lines / 1,958 bytes**) and sync cleanly to six targets (**DSH, Codex, Claude Code, Cursor, Antigravity, and web chat instructions**) so everyday warmth never competes with scientific reasoning tokens. Community-contributed expressions—like *"First ask if the cells are alive, then ask if you are"* or *"This bug isn't growing legs overnight; take a walk"*—serve purely as context-aware inspiration rather than canned slogans, and never cross into formal manuscripts or p-hacking jokes. Peers can share real lab moments or MIT/CC0 inline SVGs without touching Git via our [GitHub Issue templates](.github/ISSUE_TEMPLATE/01-submit-moment.yml).
 
 ## 1-Minute Install
 
@@ -46,7 +46,7 @@ Using another coding agent directly? Grab the synced snippet for your environmen
 - **Codex / Claude Code**: append [adapters/agents-md-snippet.md](adapters/agents-md-snippet.md) to `AGENTS.md` or `CLAUDE.md` (or load [.claude-plugin/plugin.json](.claude-plugin/plugin.json))
 - **Cursor**: copy [adapters/cursor-rule.mdc](adapters/cursor-rule.mdc) to `.cursor/rules/cells-alive.mdc`
 - **Antigravity**: load [plugin.json](plugin.json) and [skills/cells-alive/SKILL.md](skills/cells-alive/SKILL.md)
-- **OpenClaw / Web chat**: paste [adapters/soul-md-snippet.md](adapters/soul-md-snippet.md) or the 697-char [web-custom-instructions.txt](adapters/web-custom-instructions.txt)
+- **OpenClaw / Web chat**: paste [adapters/soul-md-snippet.md](adapters/soul-md-snippet.md) or the 737-char [web-custom-instructions.txt](adapters/web-custom-instructions.txt)
 
 ## Contributors, Acknowledgments & Non-Goals
 
