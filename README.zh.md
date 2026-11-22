@@ -8,7 +8,7 @@
 
 做实验或者通宵跑分析做久了，每天都在盯着培养箱、条带和卡住的脚本转，很容易忘了停下来吃口饭、睡一觉。而真对着常见 AI 吐句苦水时，它往往丢回上千字的“一二三步反思清单”，甚至在不知道身份时默认管你叫“学生”；如果换成网上很吵的搞笑人设模板，又会挤占模型记忆，写到论文正文字里行间还会漏出几句轻飘飘的网络梗。
 
-这个只有 **6 行、1,958 字节**常驻规则的小插件想做的事很简单：聊天时听得懂实验室里的真实难处与日常黑话，以理解而不评判的分寸先把人接住（不贴标签、不充当心理咨询师，也不拉偏课题）；切回写论文正文或代码时，立刻退回干净严谨的学术状态。
+这个只有 **6 行、1,948 字节**常驻规则的小插件想做的事很简单：聊天时听得懂实验室里的真实难处与日常黑话，以理解而不评判的分寸先把人接住——情绪上头时不抢跑甩“三步行动清单”催焦虑，不贴标签也不充当心理咨询师；切回写论文正文或代码时，立刻退回干净严谨的学术状态。
 
 ## 实际用起来是什么感觉
 
@@ -27,7 +27,7 @@
 
 ## 为什么能一直保持清醒和好感
 
-插件并没有把大量语录塞进每次对话的系统提示里，而是把底层规则严格锁在 `core/micro-rule.md` 的 **6 个非空行（1,958 字节）**之内，不抢科学推理的上下文注意力，并由脚本自动同步到 **DSH、Codex、Claude Code、Cursor、Antigravity 与网页端自定义指令** 6 套适配器，保持零漂移。
+插件并没有把大量语录塞进每次对话的系统提示里，而是把底层规则严格锁在 `core/micro-rule.md` 的 **6 个非空行（1,948 字节）**之内，不抢科学推理的上下文注意力，并由脚本自动同步到 **DSH、Codex、Claude Code、Cursor、Antigravity 与网页端自定义指令** 6 套适配器，保持零漂移。
 
 社区里收集的那些会心一笑的日常表达——比如“先问细胞还活着吗，再问问自己还活着吗”“问题不会连夜长腿跑掉，先去走两步”“允许今天先停在半路上”——只作为按语境化用的灵感池存在，不会每次对话机械背台词，也不会带进任何正式文档或学术不端玩笑里。如果你也想加一两句属于自己实验室的瞬间或极简 SVG 小贴纸，不会 Git 也能直接点网页 [GitHub Issue 表单](.github/ISSUE_TEMPLATE/01-submit-moment.yml) 投稿。
 
@@ -48,7 +48,7 @@ dsh plugin --profile web add "github:Spark-xY6/dsh-plugin-cells-alive#v0.1.0"
 - Codex / Claude Code：把 [adapters/agents-md-snippet.md](adapters/agents-md-snippet.md) 追加到项目根目录 `AGENTS.md` 或 `CLAUDE.md`（或使用 [.claude-plugin/plugin.json](.claude-plugin/plugin.json)）
 - Cursor：复制 [adapters/cursor-rule.mdc](adapters/cursor-rule.mdc) 为 `.cursor/rules/cells-alive.mdc`
 - Antigravity：放入本地插件目录，直接加载内置 [plugin.json](plugin.json) 与 [SKILL.md](skills/cells-alive/SKILL.md)
-- OpenClaw / 网页版聊天框：复制 [adapters/soul-md-snippet.md](adapters/soul-md-snippet.md) 或仅有 737 字的 [web-custom-instructions.txt](adapters/web-custom-instructions.txt)
+- OpenClaw / 网页版聊天框：复制 [adapters/soul-md-snippet.md](adapters/soul-md-snippet.md) 或仅有 741 字的 [web-custom-instructions.txt](adapters/web-custom-instructions.txt)
 
 ## 贡献者、致谢与边界
 
