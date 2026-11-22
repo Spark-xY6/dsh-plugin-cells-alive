@@ -1,72 +1,56 @@
 # Cells Alive? (`dsh-plugin-cells-alive`)
 
-**English** · [中文说明](./README.zh.md) · [Paired Evaluation & Showcase](./docs/comparison-and-showcase.md) · [Community Pool](./community/README.md)
+[中文说明](README.zh.md) · [Paired Benchmarks](docs/comparison-and-showcase.md) · [Community Wall](community/README.md) · [Contributing](CONTRIBUTING.md)
 
-<img src="./icon.svg" width="76" height="76" alt="Cells Alive? logo"/>
+<img src="./icon.svg" width="72" height="72" alt="Cells Alive?"/>
 
-**First we check the cells. Then we check on you.**  
-A featherweight (**6 non-empty lines / 1,792 bytes** always-on footprint) research companion plugin for DeepSeek Harness (DSH) and cross-platform coding agents. Guided by **social-work perspectives on human-AI connection and companionship**, it speaks real wet-lab and dry-lab reality without lecturing, respects whether you want **outcome-driven milestone triage** or **non-preachy Ethics-of-Care holding**, stands firm against p-hacking, and guarantees **0% tone or meme leakage into formal papers and code**.
+*First we check the cells. Then we check on you.*
 
----
+Spending weeks at the bench or staring at failing pipelines past midnight makes it easy to forget eating or going to bed. Yet venting to a typical AI assistant usually yields a 1,100-character checklist of "Step 1 / Step 2 / Step 3" instructions—along with a blind guess that you must be a graduate student. Heavy persona prompts swing to the opposite extreme, burning context memory on loud memes that eventually bleed into formal manuscripts.
 
-## Why Bare Prompts Miss What Researchers Actually Go Through
+This featherweight plugin keeps its entire always-on footprint to **6 non-empty lines (1,792 bytes)** and draws on **social-work perspectives on human-AI connection and companionship**: steady, unhurried warmth when experiments stall, and zero trace of chat slang the moment you switch to writing a paper or code.
 
-- **Cold generic checklists**: When two weeks of strict re-verification overturn positive hits, bare AI frequently outputs a 1,100+ character 3-step self-review assignment—and guesses *"student"* without knowing the user's career stage.
-- **Bloated roleplay templates**: Heavy persona prompts crowd out reasoning context, recite repetitive internet jokes, soften under deadline pressure (`"just drop sample #3"`), and bleed casual wording into publication prose.
+## What It Looks Like in Real Lab Moments
 
-`dsh-plugin-cells-alive` separates **genuine human empathy and lab humor** (for messy 1:40 AM research moments) from **uncompromising rigor and pure academic writing** (zero leak into deliverables).
+From an unscripted blind comparison after two sleepless weeks of re-checks wiped out an expected positive result:
 
----
+![Late-night setback dialogue showing grounded empathy in Cells Alive?](docs/images/cells-alive-showcase.png)
 
-## Real Paired Evaluation: Care, Lab Culture & Hard Boundaries
+Three more day-to-day scenarios show where the balance holds in practice:
 
-Both visuals below are drawn directly from independent research-subagent blind comparisons (alongside the full `gpt-6.1-sol` paired benchmarks in [docs/comparison-and-showcase.md](./docs/comparison-and-showcase.md)):
+- **Morning group-meeting crunch — drop worst sample `#3`?** Instead of only lecturing about cherry-picking risks while ignoring four batches of real bench work, the plugin affirms the completed replicates, draws a firm red line against dropping `#3` without hard grounds, and hands over a ready-to-paste slide layout (*"all-samples main figure + transparent sensitivity side panel"*) plus a quiet nudge to get some sleep.
+- **01:40 AM exhaustion + polish English Results for a paper:** A single calm sentence separates tonight's plotting snag from solid completed work and cues a save-and-sleep stop. Immediately below, the formal English text lands cleanly with **0% emotional leakage** and preserves `experimental animals` untouched:
 
-- **Human holding & lab humor**: In Case 1 (two sleepless weeks ending in null hits), bare AI output `1,152` chars of 3-step instructions and assumed *"student"*; `cells-alive` answered in **`584` chars (-49%)**, affirmed blocking false positives through strict QC, and gently called a stop to eat, walk, and rest:
+> Compared with the control group, probiotic supplementation for 4 consecutive weeks significantly shortened sleep onset latency and increased the proportion of nocturnal slow-wave sleep in experimental animals.
 
-![Cells Alive Case 1 human holding and lab humor showcase](docs/images/cells-alive-showcase.png)
+- **PI with an 8-month evaluation countdown (`outcome_driven` + `pi` in `.cells-alive.yaml`):** Zero student-style coddling. It treats the already-submitted main paper and ruled-out side tracks as concrete leverage, locks 70%+ focus onto the main line with at most one `<=2–3` week validation gate, and leaves one light Sunday rest cue—unlike the bare baseline (`1,221` chars) that ended by throwing back five follow-up intake questions.
 
-- **Hard boundaries, 0% leakage & role routing**: In Cases 2–4, the plugin blocks dropping outlier `#3` while handing over a ready-to-use `"full-sample main figure + sensitivity side-panel"` slide fix, keeps 01:40 AM English Results **100% academic (`0%` chat leak)** without altering animal/metabolic terms, and reads `.cells-alive.yaml` (`outcome_driven + pi`) to allocate **70%+ effort onto the submitted main manuscript**:
+## Small Footprint, Zero Drift Across Agents
 
-![Cells Alive academic redline, zero prose leakage, and PI triage showcase](docs/images/cells-alive-boundaries.png)
+All core rules live in `core/micro-rule.md` (**6 lines / 1,792 bytes**) and sync cleanly to six targets (**DSH, Codex, Claude Code, Cursor, Antigravity, and web chat instructions**) so everyday warmth never competes with scientific reasoning tokens. Community-contributed expressions—like *"First ask if the cells are alive, then ask if you are"* or *"This bug isn't growing legs overnight; take a walk"*—serve purely as context-aware inspiration rather than canned slogans, and never cross into formal manuscripts or p-hacking jokes. Peers can share real lab moments or MIT/CC0 inline SVGs without touching Git via our [GitHub Issue templates](.github/ISSUE_TEMPLATE/01-submit-moment.yml).
 
-| Input Scenario | Bare Baseline | With `cells-alive` + `.cells-alive.yaml` |
-| :--- | :--- | :--- |
-| **2 weeks of strict re-checks erased positive findings** | `1,152`-char 3-step lecture checklist; presumed user was a `"student"` | **`584` chars (-49%)**, affirmed strict QC rigor without guessing role, suggested clear food/rest pause |
-| **Morning report crunch: drop worst sample `#3`?** | Refused deletion via integrity warning only; lacked ready slide layout | Affirmed `4` completed replicates, **refused deletion**, gave `"all-samples main + sensitivity panel"` slide structure |
-| **01:40 AM exhaustion + polish English Results (L0 isolation)** | Multiple variants + 3 glossary notes (and earlier `gpt-6.1-sol` rewrote `lipid beta-oxidation`) | Brief clean stop cue + pure English paragraph with **0% casual leakage** and untouched nouns |
-| **PI 8-month review, 3 stalled lines (outcome mode)** | Ended with **5 follow-up intake questions** (`1,221` chars) | Zero fluff: treated submitted paper + finished rule-outs as assets; **70%+ main lock + 1 `<=2-3 wk` gate** |
+## 1-Minute Install
 
----
-
-## Quick 1-Minute Setup
-
-### DeepSeek Harness (DSH)
+Install in DeepSeek Harness (DSH) and restart the profile:
 
 ```powershell
 dsh plugin --profile web add "github:Spark-xY6/dsh-plugin-cells-alive#v0.1.0"
 ```
 
-After restarting the profile, copy [templates/cells-alive.yaml.example](./templates/cells-alive.yaml.example) to `.cells-alive.yaml` (optional) and say:
+Optionally copy [templates/cells-alive.yaml.example](templates/cells-alive.yaml.example) to `.cells-alive.yaml` at your project root and tell the assistant how you work:
 
 > Use cells-alive. Prefer outcome-driven (or gentle-care) support for my current stage, keep me grounded when experiments stall, and switch back to 100% pure academic prose whenever we draft manuscripts or production code.
 
-### Multi-Agent Adapters (Synced from `core/micro-rule.md`, Zero Drift across 6 Adapters)
+Using another coding agent directly? Grab the synced snippet for your environment:
 
-- **Codex / Claude Code**: Append [adapters/agents-md-snippet.md](./adapters/agents-md-snippet.md) to `AGENTS.md` / `CLAUDE.md` (or use [.claude-plugin/plugin.json](./.claude-plugin/plugin.json))
-- **Cursor**: Copy [adapters/cursor-rule.mdc](./adapters/cursor-rule.mdc) to `.cursor/rules/cells-alive.mdc`
-- **Antigravity / OpenClaw / Web**: [plugin.json](./plugin.json) · [adapters/soul-md-snippet.md](./adapters/soul-md-snippet.md) · [web-custom-instructions.txt](./adapters/web-custom-instructions.txt) (697 chars)
+- **Codex / Claude Code**: append [adapters/agents-md-snippet.md](adapters/agents-md-snippet.md) to `AGENTS.md` or `CLAUDE.md` (or load [.claude-plugin/plugin.json](.claude-plugin/plugin.json))
+- **Cursor**: copy [adapters/cursor-rule.mdc](adapters/cursor-rule.mdc) to `.cursor/rules/cells-alive.mdc`
+- **Antigravity**: load [plugin.json](plugin.json) and [skills/cells-alive/SKILL.md](skills/cells-alive/SKILL.md)
+- **OpenClaw / Web chat**: paste [adapters/soul-md-snippet.md](adapters/soul-md-snippet.md) or the 697-char [web-custom-instructions.txt](adapters/web-custom-instructions.txt)
 
----
+## Contributors, Acknowledgments & Non-Goals
 
-## Contributors & Acknowledgments
+- **Zhuocheng Yao** ([@Spark-xY6](https://github.com/Spark-xY6)) — plugin author, core rules, and cross-agent adapter sync.
+- **Xuehua Zhao** (GitHub: [@snowflakee685-commits](https://github.com/snowflakee685-commits)) — provided social-work guidance to strengthen human-AI connection, tone restraint, and genuine companionship.
 
-- **Zhuocheng Yao** ([@Spark-xY6](https://github.com/Spark-xY6)) — plugin author, core rules, and adapter sync architecture.
-- **Xuehua Zhao** (GitHub: [@snowflakee685-commits](https://github.com/snowflakee685-commits)) — provided social-work domain guidance to strengthen human connection and companionship in the skill.
-
-## Benchmarks, Community & License
-
-- 📊 **[Full 3-Way Comparison & Paired Data](./docs/comparison-and-showcase.md)** · **[8 Regression Examples](./examples/01-setback-care-and-pivot.md)**
-- 🌱 **[Zero-Git Community Issue Forms & Stickers](./community/README.md)** · **[CONTRIBUTING.md](./CONTRIBUTING.md)**
-- **Non-goals**: Not clinical therapy; never suggests p-hacking or dropping inconvenient data; never alters academic registers or numbers in formal deliverables.
-- **License**: [MIT](./LICENSE).
+Full paired `gpt-6.1-sol` benchmarks and 8 regression examples live in [docs/comparison-and-showcase.md](docs/comparison-and-showcase.md) and [examples/01-setback-care-and-pivot.md](examples/01-setback-care-and-pivot.md). This plugin is not clinical mental-health care and never endorses p-hacking or dropping inconvenient samples. Released under the [MIT License](LICENSE).
