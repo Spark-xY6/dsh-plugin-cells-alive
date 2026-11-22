@@ -62,6 +62,17 @@
     "@deepseek-ai/cordis": "*",
     "@deepseek-ai/dsh-skill": "*"
   },
+  "author": "Zhuocheng Yao (@Spark-xY6)",
+  "contributors": [
+    {
+      "name": "Zhuocheng Yao",
+      "url": "https://github.com/Spark-xY6"
+    },
+    {
+      "name": "Xuehua Zhao",
+      "url": "https://github.com/snowflakee685-commits"
+    }
+  ],
   "peerDependenciesMeta": {
     "@deepseek-ai/cordis": {
       "optional": true

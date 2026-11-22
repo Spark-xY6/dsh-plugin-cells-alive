@@ -53,6 +53,11 @@ After restarting the profile, copy [templates/cells-alive.yaml.example](./templa
 
 ---
 
+## Contributors & Acknowledgments
+
+- **Zhuocheng Yao** ([@Spark-xY6](https://github.com/Spark-xY6)) — plugin author, core rules, and adapter sync architecture.
+- **Xuehua Zhao** (GitHub: [@snowflakee685-commits](https://github.com/snowflakee685-commits)) — provided social-work domain guidance to strengthen human connection and companionship in the skill.
+
 ## Benchmarks, Community & License
 
 - 📊 **[Full 3-Way Comparison & Paired Data](./docs/comparison-and-showcase.md)** · **[8 Regression Examples](./examples/01-setback-care-and-pivot.md)**

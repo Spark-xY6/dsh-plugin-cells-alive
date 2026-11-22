@@ -50,6 +50,13 @@
 
 ---
 
+## 贡献者与致谢
+
+- **Zhuocheng Yao**（[@Spark-xY6](https://github.com/Spark-xY6)）：插件发起人、核心规则与适配器工程实现。
+- **Xuehua Zhao**（GitHub: [@snowflakee685-commits](https://github.com/snowflakee685-commits)）：提供了社会工作方面的专业建议，用于优化技能中 AI 与人的联结和陪伴感。
+
+---
+
 ## Quick English Contributing Note
 
 New moments, relaxed lab expressions, tone calibrations, and original MIT/CC0 inline SVGs are warmly welcome via `.github/ISSUE_TEMPLATE/` (zero-Git) or PRs into `community/`. Before opening a PR, please ensure `python scripts/sync_adapters.py --check` passes with exit code `0`.

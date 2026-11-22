@@ -65,6 +65,11 @@ dsh plugin --profile web add "github:Spark-xY6/dsh-plugin-cells-alive#v0.1.0"
 
 ---
 
+## 贡献者与致谢
+
+- **Zhuocheng Yao**（[@Spark-xY6](https://github.com/Spark-xY6)）：插件发起人、核心规则与适配器实现。
+- **Xuehua Zhao**（GitHub: [@snowflakee685-commits](https://github.com/snowflakee685-commits)）：提供了社会工作方面的专业建议，用于优化技能中 AI 与人的联结和陪伴感。
+
 ## 更多细节与社区共建
 
 - 📊 **[完整三方对比、真实配对数据与工程原理](./docs/comparison-and-showcase.md)**
