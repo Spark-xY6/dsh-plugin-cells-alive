@@ -1,7 +1,7 @@
 {
   "name": "dsh-plugin-cells-alive",
-  "version": "0.1.0",
-  "description": "First we check the cells. Then we check on you. Human-centered life-science companion plugin and skill supporting outcome-driven milestones, Ethics-of-Care holding, strengths recognition, curiosity protection, and 0% formal manuscript leakage.",
+  "version": "0.3.0",
+  "description": "First we check the cells. Then we check on you. Human-centered life-science companion plugin with warm Ethics-of-Care holding, milestone focus, Clean Breakpoint, and 0% manuscript leakage.",
   "license": "MIT",
   "type": "module",
   "main": "./lib/index.js",
@@ -46,7 +46,7 @@
     ".claude-plugin",
     "CONTRIBUTING.md",
     "README.md",
-    "README.zh.md",
+    "README.en.md",
     "LICENSE"
   ],
   "dsh": {

@@ -1,0 +1,403 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="color-scheme" content="light dark">
+<title>细胞还活着吗 · 从你想说的那句话开始</title>
+<style>
+:root{
+  --bg:#f7f5ed; --surface:#fffdf7; --surface-soft:#f0ede0; --ink:#1d352e;
+  --muted:#495f56; --border:#9aa89c; --accent:#1f5143; --accent-ink:#ffffff;
+  --amber:#b8651b; --amber-bg:#fef6e7; --focus:#ab4e24;
+}
+html[data-theme="night"]{
+  --bg:#131918; --surface:#1b2422; --surface-soft:#222e2b; --ink:#e6efe9;
+  --muted:#a6b9b0; --border:#3b524b; --accent:#2da38b; --accent-ink:#0b1a16;
+  --amber:#f5b851; --amber-bg:#292318; --focus:#f5b851;
+}
+*{box-sizing:border-box}
+body{
+  margin:0; background:var(--bg); color:var(--ink);
+  font:16px/1.68 "Microsoft YaHei UI","PingFang SC","Noto Sans SC",system-ui,-apple-system,sans-serif;
+  transition:background .18s ease,color .18s ease;
+}
+main{width:min(100% - 2rem,46rem);margin:clamp(1rem,4vh,3.2rem) auto 2.5rem}
+header{
+  display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;
+  border-top:3px solid var(--accent);padding:.9rem 0 .7rem;
+}
+.brand-wrap{display:flex;align-items:center;gap:.65rem}
+.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand{font:700 .95rem/1.2 Consolas,"Courier New",monospace;letter-spacing:.03em;color:var(--accent)}
+.tagline{font-size:.82rem;color:var(--muted)}
+.controls{display:flex;align-items:center;gap:.5rem}
+button,select,textarea,input{font:inherit;color:inherit}
+select,input[type="text"]{
+  border:1px solid var(--border);border-radius:.4rem;background:var(--surface);padding:.35rem .55rem;font-size:.9rem;
+}
+#theme-toggle{
+  border:1px solid var(--border);border-radius:999px;background:var(--surface);
+  padding:.32rem .75rem;font-size:.86rem;cursor:pointer;
+}
+h1{
+  font:700 clamp(1.75rem,4.8vw,2.75rem)/1.28 "Microsoft YaHei UI","PingFang SC",Georgia,serif;
+  letter-spacing:-.02em;margin:1.15rem 0 .45rem;
+}
+p{margin:0 0 1.2rem;color:var(--muted)}
+.field{display:block;font-weight:700;margin:.7rem 0 .45rem}
+.chip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:.5rem;margin:.55rem 0 .25rem}
+.example{
+  display:block;width:100%;border:1px solid var(--border);border-radius:.45rem;background:var(--surface);
+  text-align:left;padding:.55rem .7rem;font-size:.92rem;line-height:1.45;cursor:pointer;
+}
+.example:hover{border-color:var(--accent);background:var(--surface-soft)}
+.peer-card{
+  margin:.8rem 0;padding:.85rem 1rem;border-left:4px solid var(--amber);
+  border-radius:.45rem;background:var(--amber-bg);font-size:.94rem;
+}
+.peer-card strong{display:block;color:var(--amber);margin-bottom:.25rem;font-size:.86rem}
+.peer-card p{margin:0;color:var(--ink);line-height:1.58}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+textarea{
+  width:100%;border:1px solid var(--border);border-radius:.5rem;background:var(--surface);
+  padding:.75rem .85rem;resize:vertical;
+}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin:.75rem 0}
+#copy{
+  background:var(--accent);color:var(--accent-ink);border:0;border-radius:.42rem;
+  font-weight:700;padding:.65rem 1.3rem;cursor:pointer;
+}
+.btn-secondary{
+  border:1px solid var(--border);border-radius:.42rem;background:var(--surface);
+  padding:.52rem .95rem;font-size:.9rem;cursor:pointer;
+}
+#status,#bp-status{display:inline-block;min-height:1.5rem;font-size:.92rem;color:var(--accent);font-weight:600}
+details{border-top:1px solid var(--border);padding-top:.75rem;margin-top:.85rem}
+summary{cursor:pointer;font-weight:600}
+#preview,#yaml-preview{
+  margin-top:.6rem;font:.88rem/1.55 Consolas,"Microsoft YaHei UI",monospace;
+}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:.75rem;margin:.7rem 0}
+.sub-label{display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.3rem}
+.grid-2 input,.grid-2 select{width:100%}
+</style>
+</head>
+<body>
+<main>
+<header>
+  <div class="brand-wrap">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
+      <path d="M64 16 C92 16, 112 34, 110 64 C108 94, 88 112, 62 110 C34 108, 16 88, 18 60 C20 34, 38 16, 64 16 Z" stroke="#14B8A6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M64 27 C84 27, 99 41, 98 64 C97 86, 82 99, 62 98 C42 97, 29 82, 30 61 C31 41, 45 27, 64 27 Z" stroke="#0F766E" stroke-width="2.5" stroke-dasharray="10 6" stroke-linecap="round"/>
+      <circle cx="52" cy="54" r="11" fill="#F59E0B" stroke="#B45309" stroke-width="2.5"/>
+      <path d="M36 74 H52 L58 63 L66 84 L73 70 L78 74 H92" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    </svg>
+    <div class="brand-text">
+      <span class="brand">Cells Alive?</span>
+      <span class="tagline" id="tagline">先问细胞，再问问你自己还活着吗</span>
+    </div>
+  </div>
+  <div class="controls">
+    <select id="lang" aria-label="界面语言 / Language"><option value="zh">中文</option><option value="en">English</option></select>
+    <button type="button" id="theme-toggle" aria-pressed="false">深夜台灯</button>
+  </div>
+</header>
+
+<h1 id="title">从你想说的那句话开始</h1>
+<p id="intro">写一句自己的话，连同原版陪伴规则复制到你平时用的 AI 聊天。留空可只复制规则。</p>
+
+<form id="builder">
+  <label for="message" class="field" id="label">我想说</label>
+  <textarea rows="3" id="message" placeholder="哪怕只打一句“哎，今晚又重跑了一遍”，或者干脆留空直接复制规则。"></textarea>
+
+  <details id="examples">
+    <summary id="examples-title">想不到怎么开头？选一句加到输入框</summary>
+    <div class="chip-grid">
+      <button type="button" class="example" id="setback" data-reply-zh="返修了三轮还被打回确实磨人。先把前面已经跑稳的两步留住，等你想动手时我们只挑最卡的那 1 张子图看。" data-reply-en="Revising three rounds and getting pushed back is exhausting. Your solid core runs are still intact; whenever you're ready, let's look at just one stuck panel."></button>
+      <button type="button" class="example" id="wonder" data-reply-zh="和预期相反往往比验证已知更有意思！先别急着判失败，我们一起核对对照、批次与原始分布再下结论。" data-reply-en="A surprise result is often where the real biology lives. Let's check controls, batch effects, and raw distributions before calling it off."></button>
+      <button type="button" class="example" id="night" data-reply-zh="这么晚还在看实验记录辛苦了。先把已跑出来的输出和版本号存成干净断点，剩下的明天白天再核也不迟。" data-reply-en="It's late to still be staring at bench or run logs. Save one clean checkpoint for tonight; the rest can wait for fresh eyes tomorrow."></button>
+      <button type="button" class="example" id="milestone" data-reply-zh="紧赶毕业/交付确实让人喘不过气。我们先把已有结果排个轻重顺序，今天只啃性价比最高的 1 个小卡点。" data-reply-en="Milestone deadlines pack a lot of weight. Let's list what is already done and tackle just one highest-leverage blocker right now."></button>
+      <button type="button" class="example" id="outlier" data-reply-zh="手累时很想把异常点直接撇掉，这念头我懂——但红线不能松。我们一起看一眼原始记录，搞清它是技术伪影还是真异质性。" data-reply-en="When you're tired it's tempting to drop an awkward point—I hear you, and we still protect rigor. Let's inspect raw traces to tell artifact from biology."></button>
+      <button type="button" class="example" id="calm" data-reply-zh="收到，这段我们先纯看数字、对照组和代码本身，稳稳把这一步验证过去。" data-reply-en="Got it—calm data mode. Pure numbers, controls, and code first so this verification step lands cleanly."></button>
+    </div>
+  </details>
+
+  <div id="peer-card" class="peer-card" hidden>
+    <strong id="peer-title">即时同伴回音（离线预览 · 不改动你的复制文本）</strong>
+    <p id="peer-reply"></p>
+  </div>
+
+  <div class="actions">
+    <button type="button" id="copy">复制到聊天</button>
+    <output id="status" role="status" aria-live="polite"></output>
+  </div>
+</form>
+
+<details id="detail">
+  <summary id="summary">查看或手动复制要粘贴的内容</summary>
+  <textarea readonly id="preview" rows="8" aria-label="完整提示 / Full prompt"></textarea>
+</details>
+
+<details id="breakpoint-box">
+  <summary id="bp-title">深夜收工：顺手记一条「干净断点便签」（仅存本机浏览器）</summary>
+  <div class="grid-2">
+    <div>
+      <label class="sub-label" for="bp-done" id="bp-done-label">今天已经做稳的一步</label>
+      <input type="text" id="bp-done" placeholder="例如：批间 QC 通过，raw counts 与代码哈希已存">
+    </div>
+    <div>
+      <label class="sub-label" for="bp-next" id="bp-next-label">明天醒来最小可验证动作</label>
+      <input type="text" id="bp-next" placeholder="例如：跑通对照组 2 个样本的小提琴图">
+    </div>
+  </div>
+  <div class="actions">
+    <button type="button" class="btn-secondary" id="bp-clear">清空断点</button>
+    <output id="bp-status" role="status" aria-live="polite"></output>
+  </div>
+</details>
+
+<details id="yaml-box">
+  <summary id="yaml-title">本地项目想长期记住偏好？生成 `.cells-alive.yaml`</summary>
+  <div class="grid-2">
+    <div>
+      <label class="sub-label" for="cfg-tone" id="cfg-tone-label">交互重心 (tone_style)</label>
+      <select id="cfg-tone">
+        <option value="gentle_care">gentle_care（先接住情绪再推进）</option>
+        <option value="outcome_driven">outcome_driven（紧贴毕业/交付）</option>
+        <option value="brief_peer">brief_peer（简短平实同行）</option>
+        <option value="minimal">minimal（极克制仅卡点轻带）</option>
+      </select>
+    </div>
+    <div>
+      <label class="sub-label" for="cfg-role" id="cfg-role-label">所处阶段 (role_stage)</label>
+      <select id="cfg-role">
+        <option value="unspecified">unspecified（按对话自然适配）</option>
+        <option value="grad_student">grad_student（硕博研究生）</option>
+        <option value="postdoc_faculty">postdoc_faculty（博后/青椒/研究员）</option>
+        <option value="industry_rd">industry_rd（生物医药/研发）</option>
+      </select>
+    </div>
+    <div>
+      <label class="sub-label" for="cfg-track" id="cfg-track-label">研究背景 (research_track)</label>
+      <select id="cfg-track">
+        <option value="mixed">mixed（干湿结合）</option>
+        <option value="dry_lab">dry_lab（生信与计算）</option>
+        <option value="wet_lab">wet_lab（湿实验为主）</option>
+      </select>
+    </div>
+    <div>
+      <label class="sub-label" for="cfg-humor" id="cfg-humor-label">松弛短句 (light_humor)</label>
+      <select id="cfg-humor">
+        <option value="auto">auto（非崩溃偶用）</option>
+        <option value="true">true（放空收尾可偶用）</option>
+        <option value="false">false（全程不用梗）</option>
+      </select>
+    </div>
+  </div>
+  <textarea readonly id="yaml-preview" rows="8" aria-label="YAML 预览"></textarea>
+  <div class="actions">
+    <button type="button" class="btn-secondary" id="yaml-download">下载 .cells-alive.yaml</button>
+    <button type="button" class="btn-secondary" id="yaml-copy">复制 YAML</button>
+  </div>
+</details>
+
+<noscript>请启用 JavaScript，或从随包的 web-custom-instructions.txt 复制规则。</noscript>
+</main>
+
+<script type="text/plain" id="rules">
+细胞还活着吗（Cells Alive?）· 生科科研同行微规则
+- 底色与自然起手：科学服务于人，先照顾好自己、不苦大仇深、守护好奇心；覆盖硕博至研究员及企业研发（不预设身份）。有本地权限先查 .cells-alive.yaml；无则仅在轻松开聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提配置文件名或“能聊多久”；对方叹气/倾诉/遇急事直接先接住，不问卷挡门。
+- 理解而不评判（核心禁区）：平静谈数纯谈科学，零脑补情绪或身份。倾诉受挫时用平实温热的话映照处境与没被看见的辛苦，严禁评判、纠偏、贴标签或否定式辩护（如“不矫情/不脆弱/别定罪”），禁“抱抱”套话、命令式安慰、复读或抖机灵；绝不当心理咨询师（不析人格、不用术语、不拉成疗愈课）。
+- 防焦灼陪伴与节奏尊重：区分宣泄反问（如“我还能怎么办”）与真要方案——倾诉期先稳稳接住并具体看见已有进展，禁抢跑甩“做三件事”清单或多维追问免添焦灼，节奏交还对方；仅 outcome_driven 或明示要方案时收简情绪直奔毕业、博资考、求职、教职/Tenure 或交付。light_humor 仅非崩溃偶用；共赏新奇；真实时间示深夜/周末同会话至多轻带一次，禁逐轮复读。
+- 轻抓手回课题与反讨好底线：缓和或示意推进时自然回到课题与反馈，先给 1 个低负担抓手而非长清单。不放水阈值、不纵容无依据删点，禁学术不端玩笑；漂亮阳性先核假阳性再肯定。
+- 严格交付隔离：论文、学位论文、审稿回复、基金、正式 PPT 与代码正文保持 0% 情绪与梗渗入；仅对话与内部 .md/.html 独立「阶段注记」可留 1–2 句克制记录，不改数字与限制。
+</script>
+<script>
+const ui = {
+  zh: {
+    tagline:"先问细胞，再问问你自己还活着吗",
+    themeLight:"深夜台灯", themeNight:"回到暖纸",
+    title:"从你想说的那句话开始",
+    intro:"写一句自己的话，连同原版陪伴规则复制到你平时用的 AI 聊天。留空可只复制规则。",
+    label:"我想说",
+    placeholder:"哪怕只打一句“哎，今晚又重跑了一遍”，或者干脆留空直接复制规则。",
+    "examples-title":"想不到怎么开头？选一句加到输入框",
+    setback:"图改了三遍又被退回来了。",
+    wonder:"这次有个现象和预想不一样，我挺好奇的。",
+    night:"凌晨刚跑完批次，先做个收尾断点再关机。",
+    milestone:"要赶毕业/交付卡点，但我现在脑子有点发木。",
+    outlier:"有个离群样本拉低了 R²，差点想顺手删掉。",
+    calm:"这轮我们纯核对数字和对照组，先不用铺垫。",
+    "peer-title":"即时同伴回音（离线预览 · 不改动你的复制文本）",
+    copy:"复制到聊天",
+    summary:"查看或手动复制要粘贴的内容",
+    copied:"已复制。切到你的聊天框粘贴并发送。",
+    manual:"已选中完整内容，请用系统复制命令，再粘贴到聊天框。",
+    "bp-title":"深夜收工：顺手记一条「干净断点便签」（仅存本机浏览器）",
+    "bp-done-label":"今天已经做稳的一步",
+    "bp-next-label":"明天醒来最小可验证动作",
+    "bp-clear":"清空断点",
+    "bp-saved":"已暂存到本机浏览器。",
+    "yaml-title":"本地项目想长期记住偏好？生成 .cells-alive.yaml",
+    "yaml-download":"下载 .cells-alive.yaml",
+    "yaml-copy":"复制 YAML"
+  },
+  en: {
+    tagline:"First check the cells. Then check on you.",
+    themeLight:"Night lamp", themeNight:"Warm paper",
+    title:"Start with what’s on your mind",
+    intro:"Write a message and copy it with the original guidelines into your usual AI chat. Leave the box empty to copy just the guidelines.",
+    label:"My message",
+    placeholder:"Even one line like 'Rough day at the bench' works—or leave blank to copy only the guidelines.",
+    "examples-title":"Need a starting point? Choose an example to add",
+    setback:"I revised the figure three times and it came back again.",
+    wonder:"Something in this experiment surprised me. I’m curious about it.",
+    night:"Just finished a late batch run—help me pack a clean checkpoint.",
+    milestone:"Tight deadline ahead and my head feels foggy; need one small next step.",
+    outlier:"One outlier point looks tempting to drop when I’m exhausted.",
+    calm:"Calm data mode—let’s strictly check numbers, controls, and code.",
+    "peer-title":"Instant peer echo preview (offline · never alters your copied prompt)",
+    copy:"Copy for my chat",
+    summary:"Preview or copy the complete message manually",
+    copied:"Copied. Paste into your chat and send when ready.",
+    manual:"The full message is selected. Use your device’s Copy command, then paste into your chat.",
+    "bp-title":"Late-night wrap-up: Clean Breakpoint Note (stored locally only)",
+    "bp-done-label":"One solid step already banked today",
+    "bp-next-label":"Smallest verifiable check for tomorrow",
+    "bp-clear":"Clear note",
+    "bp-saved":"Saved in local browser storage.",
+    "yaml-title":"Want a project to remember preferences? Build .cells-alive.yaml",
+    "yaml-download":"Download .cells-alive.yaml",
+    "yaml-copy":"Copy YAML"
+  }
+};
+const get = id => document.getElementById(id);
+const message = get("message");
+const language = get("lang");
+const rules = get("rules").textContent.trim();
+const themeBtn = get("theme-toggle");
+let lastExampleId = "";
+
+function refreshThemeLabel() {
+  const night = document.documentElement.dataset.theme === "night";
+  const data = ui[language.value];
+  themeBtn.textContent = night ? data.themeNight : data.themeLight;
+  themeBtn.setAttribute("aria-pressed", night ? "true" : "false");
+}
+
+function updateYaml() {
+  const tone = get("cfg-tone").value;
+  const role = get("cfg-role").value;
+  const track = get("cfg-track").value;
+  const humor = get("cfg-humor").value;
+  get("yaml-preview").value = [
+    "# .cells-alive.yaml",
+    `tone_style: ${tone}`,
+    `role_stage: ${role}`,
+    "dosage: adaptive",
+    "time_awareness: true",
+    `light_humor: ${humor}`,
+    "internal_md_html_note: true",
+    `research_track: ${track}`,
+  ].join("\n");
+}
+
+function refresh() {
+  const data = ui[language.value];
+  document.documentElement.lang = language.value === "en" ? "en" : "zh-CN";
+  document.title = "Cells Alive? · " + data.title;
+  for (const id of [
+    "tagline","title","intro","label","examples-title","setback","wonder","night",
+    "milestone","outlier","calm","peer-title","copy","summary","bp-title",
+    "bp-done-label","bp-next-label","bp-clear","yaml-title","yaml-download","yaml-copy"
+  ]) {
+    const el = get(id);
+    if (el) el.textContent = data[id];
+  }
+  message.placeholder = data.placeholder;
+  refreshThemeLabel();
+  if (lastExampleId) {
+    const btn = get(lastExampleId);
+    get("peer-reply").textContent = btn.getAttribute(language.value === "en" ? "data-reply-en" : "data-reply-zh") || "";
+  }
+  get("preview").value = message.value.trim() ? rules + "\n\n" + message.value : rules;
+  get("status").textContent = "";
+}
+
+themeBtn.addEventListener("click", () => {
+  const next = document.documentElement.dataset.theme === "night" ? "" : "night";
+  if (next) document.documentElement.dataset.theme = next;
+  else delete document.documentElement.dataset.theme;
+  refreshThemeLabel();
+  try { localStorage.setItem("cells-alive-theme", next); } catch {}
+});
+
+for (const button of document.querySelectorAll(".example")) {
+  button.addEventListener("click", () => {
+    message.value = (message.value.trim() ? message.value + "\n" : "") + button.textContent;
+    lastExampleId = button.id;
+    get("peer-reply").textContent = button.getAttribute(language.value === "en" ? "data-reply-en" : "data-reply-zh") || "";
+    get("peer-card").hidden = false;
+    message.focus();
+    refresh();
+  });
+}
+
+get("builder").addEventListener("input", refresh);
+language.addEventListener("change", refresh);
+
+get("copy").addEventListener("click", async () => {
+  const preview = get("preview");
+  const data = ui[language.value];
+  try {
+    await navigator.clipboard.writeText(preview.value);
+    get("status").textContent = data.copied;
+  } catch {
+    get("detail").open = true;
+    preview.focus();
+    preview.select();
+    get("status").textContent = data.manual;
+  }
+});
+
+function saveBreakpoint() {
+  try {
+    localStorage.setItem("cells-alive-bp", JSON.stringify({ done: get("bp-done").value, next: get("bp-next").value }));
+    get("bp-status").textContent = ui[language.value]["bp-saved"];
+  } catch {}
+}
+get("bp-done").addEventListener("input", saveBreakpoint);
+get("bp-next").addEventListener("input", saveBreakpoint);
+get("bp-clear").addEventListener("click", () => {
+  get("bp-done").value = "";
+  get("bp-next").value = "";
+  get("bp-status").textContent = "";
+  try { localStorage.removeItem("cells-alive-bp"); } catch {}
+});
+
+for (const sid of ["cfg-tone","cfg-role","cfg-track","cfg-humor"]) {
+  get(sid).addEventListener("change", updateYaml);
+}
+get("yaml-copy").addEventListener("click", async () => {
+  const yp = get("yaml-preview");
+  try { await navigator.clipboard.writeText(yp.value); } catch { yp.focus(); yp.select(); }
+});
+get("yaml-download").addEventListener("click", () => {
+  const blob = new Blob([get("yaml-preview").value + "\n"], { type: "text/yaml;charset=utf-8" });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = ".cells-alive.yaml";
+  a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1500);
+});
+
+try {
+  if (localStorage.getItem("cells-alive-theme") === "night") document.documentElement.dataset.theme = "night";
+  const savedBp = JSON.parse(localStorage.getItem("cells-alive-bp") || "null");
+  if (savedBp) { get("bp-done").value = savedBp.done || ""; get("bp-next").value = savedBp.next || ""; }
+} catch {}
+updateYaml();
+refresh();
+</script>
+</body></html>
