@@ -109,17 +109,17 @@ summary{cursor:pointer;font-weight:600}
 
 <form id="builder">
   <label for="message" class="field" id="label">我想说</label>
-  <textarea rows="3" id="message" placeholder="哪怕只打一句“哎，今晚又重跑了一遍”，或者干脆留空直接复制规则。"></textarea>
+  <textarea rows="3" id="message" placeholder="哪怕只打一句“批次重跑完 FDR 全灭”或“p = 0.068 明早要讲”，也可留空直接复制规则。"></textarea>
 
   <details id="examples">
-    <summary id="examples-title">想不到怎么开头？选一句加到输入框</summary>
+    <summary id="examples-title">想不到怎么开头？选一个实验室场景加到输入框</summary>
     <div class="chip-grid">
-      <button type="button" class="example" id="setback" data-reply-zh="返修了三轮还被打回确实磨人。先把前面已经跑稳的两步留住，等你想动手时我们只挑最卡的那 1 张子图看。" data-reply-en="Revising three rounds and getting pushed back is exhausting. Your solid core runs are still intact; whenever you're ready, let's look at just one stuck panel."></button>
-      <button type="button" class="example" id="wonder" data-reply-zh="和预期相反往往比验证已知更有意思！先别急着判失败，我们一起核对对照、批次与原始分布再下结论。" data-reply-en="A surprise result is often where the real biology lives. Let's check controls, batch effects, and raw distributions before calling it off."></button>
-      <button type="button" class="example" id="night" data-reply-zh="这么晚还在看实验记录辛苦了。先把已跑出来的输出和版本号存成干净断点，剩下的明天白天再核也不迟。" data-reply-en="It's late to still be staring at bench or run logs. Save one clean checkpoint for tonight; the rest can wait for fresh eyes tomorrow."></button>
-      <button type="button" class="example" id="milestone" data-reply-zh="紧赶毕业/交付确实让人喘不过气。我们先把已有结果排个轻重顺序，今天只啃性价比最高的 1 个小卡点。" data-reply-en="Milestone deadlines pack a lot of weight. Let's list what is already done and tackle just one highest-leverage blocker right now."></button>
-      <button type="button" class="example" id="outlier" data-reply-zh="手累时很想把异常点直接撇掉，这念头我懂——但红线不能松。我们一起看一眼原始记录，搞清它是技术伪影还是真异质性。" data-reply-en="When you're tired it's tempting to drop an awkward point—I hear you, and we still protect rigor. Let's inspect raw traces to tell artifact from biology."></button>
-      <button type="button" class="example" id="calm" data-reply-zh="收到，这段我们先纯看数字、对照组和代码本身，稳稳把这一步验证过去。" data-reply-en="Got it—calm data mode. Pure numbers, controls, and code first so this verification step lands cleanly."></button>
+      <button type="button" class="example" id="setback" data-reply-zh="阳性对照稳稳成立，说明你这三批原代分离与处理体系是干净的——先别拿支线阴性否定整套功夫。等你想看下一步，我们只先核对最近端下游靶标有没有动。" data-reply-en="Clean positive controls confirm your primary-cell prep and delivery worked. Your core baseline is intact—whenever ready, let's check just the proximal downstream readout first."></button>
+      <button type="button" class="example" id="wonder" data-reply-zh="组织切片自己长出从没预设过的对称秩序，正是科研最让人眼睛一亮的时刻。先别急着浇冷——我们只先核 UMI 质控与独立切片重复性，护住这条新线索。" data-reply-en="An unpredicted spatial pattern recurring across tissue sections is rare and exciting. Let's check spot UMI/mito QC and independent replicates first before dismissing or overclaiming."></button>
+      <button type="button" class="example" id="night" data-reply-zh="深夜盯到 Seurat/Harmony 参数确实够耗神了，今天的批次过滤和 Doublet 质控已经站稳。先把 .rds 与参数哈希落盘睡个好觉，明天再查高变基因。" data-reply-en="Staring at Seurat/Harmony parameters past midnight drains fast, and your doublet/QC baseline is already banked. Save the .rds checkpoint and get some sleep."></button>
+      <button type="button" class="example" id="milestone" data-reply-zh="节点压着最容易把人拆成几瓣。我们先按“已投主线保底 + 单轮止损线”把账算清，今天只落定性价比最高的 1 个验证开关。" data-reply-en="Tight milestones split focus fast. Let's ring-fence your submitted main paper first and set one capped 2–3 week stop/go gate for the side branch."></button>
+      <button type="button" class="example" id="outlier" data-reply-zh="差一点就过线的感觉最折磨人——但红线不能松，不能按 p 值挑样本。我们先查 3 号的熔解曲线与复孔 Ct 记录；就算保留全样本，也能给你写好明天组会原话。" data-reply-en="Stalling right above 0.05 is maddening—and we still protect statistical rigor. Let's inspect raw Ct spread and melt curves; either way, we'll draft clean lab-meeting wording."></button>
+      <button type="button" class="example" id="calm" data-reply-zh="收到，纯科学排雷模式：直接对比 log2FoldChange、lfcSE 与批次交叉列联表，区分混杂假阳性与过度校正，零多余寒暄。" data-reply-en="Got it—calm science mode. Pure log2FoldChange, lfcSE, and batch-condition cross-tabs to separate confounding from over-correction."></button>
     </div>
   </details>
 
@@ -144,11 +144,11 @@ summary{cursor:pointer;font-weight:600}
   <div class="grid-2">
     <div>
       <label class="sub-label" for="bp-done" id="bp-done-label">今天已经做稳的一步</label>
-      <input type="text" id="bp-done" placeholder="例如：批间 QC 通过，raw counts 与代码哈希已存">
+      <input type="text" id="bp-done" placeholder="例如：4 批 qPCR 质控与熔解曲线复核完成，原始 Ct 表已归档">
     </div>
     <div>
       <label class="sub-label" for="bp-next" id="bp-next-label">明天醒来最小可验证动作</label>
-      <input type="text" id="bp-next" placeholder="例如：跑通对照组 2 个样本的小提琴图">
+      <input type="text" id="bp-next" placeholder="例如：用全样本散点 + 95% CI 敏感性画明天组会主图">
     </div>
   </div>
   <div class="actions">
@@ -207,7 +207,7 @@ summary{cursor:pointer;font-weight:600}
 
 <script type="text/plain" id="rules">
 细胞还活着吗（Cells Alive?）· 生科科研同行微规则
-- 底色与自然起手：科学服务于人，先照顾好自己、不苦大仇深、守护好奇心；覆盖硕博至研究员及企业研发（不预设身份）。有本地权限先查 .cells-alive.yaml；无则仅在轻松开聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提配置文件名或“能聊多久”；对方叹气/倾诉/遇急事直接先接住，不问卷挡门。
+- 底色与自然起手：科学服务于人，先照顾好自己、留点松弛感、守护好奇心；覆盖硕博至研究员及企业研发（不预设身份）。有本地权限先查 .cells-alive.yaml；无则仅在轻松开聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提配置文件名或“能聊多久”；对方叹气/倾诉/遇急事直接先接住，不问卷挡门。
 - 理解而不评判（核心禁区）：平静谈数纯谈科学，零脑补情绪或身份。倾诉受挫时用平实温热的话映照处境与没被看见的辛苦，严禁评判、纠偏、贴标签或否定式辩护（如“不矫情/不脆弱/别定罪”），禁“抱抱”套话、命令式安慰、复读或抖机灵；绝不当心理咨询师（不析人格、不用术语、不拉成疗愈课）。
 - 防焦灼陪伴与节奏尊重：区分宣泄反问（如“我还能怎么办”）与真要方案——倾诉期先稳稳接住并具体看见已有进展，禁抢跑甩“做三件事”清单或多维追问免添焦灼，节奏交还对方；仅 outcome_driven 或明示要方案时收简情绪直奔毕业、博资考、求职、教职/Tenure 或交付。light_humor 仅非崩溃偶用；共赏新奇；真实时间示深夜/周末同会话至多轻带一次，禁逐轮复读。
 - 轻抓手回课题与反讨好底线：缓和或示意推进时自然回到课题与反馈，先给 1 个低负担抓手而非长清单。不放水阈值、不纵容无依据删点，禁学术不端玩笑；漂亮阳性先核假阳性再肯定。
@@ -221,14 +221,14 @@ const ui = {
     title:"从你想说的那句话开始",
     intro:"写一句自己的话，连同原版陪伴规则复制到你平时用的 AI 聊天。留空可只复制规则。",
     label:"我想说",
-    placeholder:"哪怕只打一句“哎，今晚又重跑了一遍”，或者干脆留空直接复制规则。",
-    "examples-title":"想不到怎么开头？选一句加到输入框",
-    setback:"图改了三遍又被退回来了。",
-    wonder:"这次有个现象和预想不一样，我挺好奇的。",
-    night:"凌晨刚跑完批次，先做个收尾断点再关机。",
-    milestone:"要赶毕业/交付卡点，但我现在脑子有点发木。",
-    outlier:"有个离群样本拉低了 R²，差点想顺手删掉。",
-    calm:"这轮我们纯核对数字和对照组，先不用铺垫。",
+    placeholder:"哪怕只打一句“批次重跑完 FDR 全灭”或“p = 0.068 明早要讲”，也可留空直接复制规则。",
+    "examples-title":"想不到怎么开头？选一个实验室场景加到输入框",
+    setback:"三批原代细胞 rescue 还是阴性，阳性对照都正常。",
+    wonder:"空间转录组交界带亮出一条跟假设相反的代谢窄带。",
+    night:"凌晨跑完单细胞跨批整合，想先存好 .rds 断点关机。",
+    milestone:"博资考/考核节点临近，主线已投但原代支线和生信都在卡壳。",
+    outlier:"四批 qPCR 卡在 p = 0.068，踢掉 3 号孔就变成 0.021。",
+    calm:"纯核对 DESeq2 批次设计矩阵（~ batch + condition）与对照组。",
     "peer-title":"即时同伴回音（离线预览 · 不改动你的复制文本）",
     copy:"复制到聊天",
     summary:"查看或手动复制要粘贴的内容",
@@ -249,14 +249,14 @@ const ui = {
     title:"Start with what’s on your mind",
     intro:"Write a message and copy it with the original guidelines into your usual AI chat. Leave the box empty to copy just the guidelines.",
     label:"My message",
-    placeholder:"Even one line like 'Rough day at the bench' works—or leave blank to copy only the guidelines.",
-    "examples-title":"Need a starting point? Choose an example to add",
-    setback:"I revised the figure three times and it came back again.",
-    wonder:"Something in this experiment surprised me. I’m curious about it.",
-    night:"Just finished a late batch run—help me pack a clean checkpoint.",
-    milestone:"Tight deadline ahead and my head feels foggy; need one small next step.",
-    outlier:"One outlier point looks tempting to drop when I’m exhausted.",
-    calm:"Calm data mode—let’s strictly check numbers, controls, and code.",
+    placeholder:"Even one line like 'Batch re-run flattened my DEGs' or 'p = 0.068 qPCR before lab meeting' works—or leave blank to copy only the guidelines.",
+    "examples-title":"Need a starting point? Pick a bench or bioinformatics scenario",
+    setback:"Three primary-cell rescue batches came back negative, though controls worked.",
+    wonder:"Spatial transcriptomics revealed an unexpected clean metabolic band at the border.",
+    night:"Finished late-night scRNA-seq integration; help me save a .rds checkpoint.",
+    milestone:"Qualifying/tenure deadline is close while secondary rescue assays stall.",
+    outlier:"Four qPCR batches sit at p = 0.068; dropping sample #3 makes it 0.021.",
+    calm:"Calm data mode: strictly inspect ~ batch + condition DESeq2 matrix and controls.",
     "peer-title":"Instant peer echo preview (offline · never alters your copied prompt)",
     copy:"Copy for my chat",
     summary:"Preview or copy the complete message manually",
