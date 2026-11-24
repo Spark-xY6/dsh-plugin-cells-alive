@@ -1,7 +1,7 @@
 {
   "meta": {
     "title": "细胞还活着吗 · 生科科研同行 (Cells Alive?)",
-    "description": "面向 DeepSeek Harness 与多端 Agent 的泛生科科研同行插件，兼顾成果导向里程碑与社会工作关怀伦理陪伴、守护好奇心，严守科学底线与正式论文 0% 渗入。",
-    "detail": "README.zh.md"
+    "description": "「科学是服务于人的」——生科科研人的陪伴与支持插件：卡壳时先接住情绪并看见已有进展，推进时给 1 个低负担抓手，支持网页夜灯体验页与正式论文 0% 渗入。",
+    "detail": "README.md"
   }
 }
