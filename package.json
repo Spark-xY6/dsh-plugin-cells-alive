@@ -1,6 +1,6 @@
 {
   "name": "dsh-plugin-cells-alive",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "First we check the cells. Then we check on you. Human-centered life-science companion plugin with warm Ethics-of-Care holding, milestone focus, Clean Breakpoint, and 0% manuscript leakage.",
   "license": "MIT",
   "type": "module",

@@ -1,7 +1,7 @@
 {
   "name": "cells-alive",
   "displayName": "细胞还活着吗 · Cells Alive?",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "先问细胞，再问问你自己还活着吗。交流层懂对照/批次、有人情味且守统计红线；写论文与 Rebuttal 时 0% 口语渗入，直出读数对齐主张的纯正生科骨相。",
   "author": "cells-alive contributors",
   "logo": "icon.svg",
