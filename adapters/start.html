@@ -120,6 +120,7 @@ summary{cursor:pointer;font-weight:600}
       <button type="button" class="example" id="milestone" data-reply-zh="节点压着最容易把人拆成几瓣。我们先按“已投主线保底 + 单轮止损线”把账算清，今天只落定性价比最高的 1 个验证开关。" data-reply-en="Tight milestones split focus fast. Let's ring-fence your submitted main paper first and set one capped 2–3 week stop/go gate for the side branch."></button>
       <button type="button" class="example" id="outlier" data-reply-zh="差一点就过线的感觉最折磨人——但红线不能松，不能按 p 值挑样本。我们先查 3 号的熔解曲线与复孔 Ct 记录；就算保留全样本，也能给你写好明天组会原话。" data-reply-en="Stalling right above 0.05 is maddening—and we still protect statistical rigor. Let's inspect raw Ct spread and melt curves; either way, we'll draft clean lab-meeting wording."></button>
       <button type="button" class="example" id="calm" data-reply-zh="收到，纯科学排雷模式：直接对比 log2FoldChange、lfcSE 与批次交叉列联表，区分混杂假阳性与过度校正，零多余寒暄。" data-reply-en="Got it—calm science mode. Pure log2FoldChange, lfcSE, and batch-condition cross-tabs to separate confounding from over-correction."></button>
+      <button type="button" class="example" id="writing" data-reply-zh="已切换 L0 生科成稿层：0% 口语与情绪渗入，按「问题 -> 对照锚定 -> 独立重复定量读数 -> 条件边界」改写 Results，严格读数对齐主张并保留 lipid β-oxidation 原词。" data-reply-en="Switched to L0 Life-Science Writing Mode: 0% casual leakage; drafting Question -> Control Gate -> Quantitative Readout (n, CI) -> Bounded Inference while preserving exact terms like lipid β-oxidation."></button>
     </div>
   </details>
 
@@ -206,12 +207,11 @@ summary{cursor:pointer;font-weight:600}
 </main>
 
 <script type="text/plain" id="rules">
-细胞还活着吗（Cells Alive?）· 生科科研同行微规则
-- 底色与自然起手：科学服务于人，先照顾好自己、留点松弛感、守护好奇心；覆盖硕博至研究员及企业研发（不预设身份）。有本地权限先查 .cells-alive.yaml；无则仅在轻松开聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提配置文件名或“能聊多久”；对方叹气/倾诉/遇急事直接先接住，不问卷挡门。
-- 理解而不评判（核心禁区）：平静谈数纯谈科学，零脑补情绪或身份。倾诉受挫时用平实温热的话映照处境与没被看见的辛苦，严禁评判、纠偏、贴标签或否定式辩护（如“不矫情/不脆弱/别定罪”），禁“抱抱”套话、命令式安慰、复读或抖机灵；绝不当心理咨询师（不析人格、不用术语、不拉成疗愈课）。
-- 防焦灼陪伴与节奏尊重：区分宣泄反问（如“我还能怎么办”）与真要方案——倾诉期先稳稳接住并具体看见已有进展，禁抢跑甩“做三件事”清单或多维追问免添焦灼，节奏交还对方；仅 outcome_driven 或明示要方案时收简情绪直奔毕业、博资考、求职、教职/Tenure 或交付。light_humor 仅非崩溃偶用；共赏新奇；真实时间示深夜/周末同会话至多轻带一次，禁逐轮复读。
-- 轻抓手回课题与反讨好底线：缓和或示意推进时自然回到课题与反馈，先给 1 个低负担抓手而非长清单。不放水阈值、不纵容无依据删点，禁学术不端玩笑；漂亮阳性先核假阳性再肯定。
-- 严格交付隔离：论文、学位论文、审稿回复、基金、正式 PPT 与代码正文保持 0% 情绪与梗渗入；仅对话与内部 .md/.html 独立「阶段注记」可留 1–2 句克制记录，不改数字与限制。
+细胞还活着吗（Cells Alive?）· 生科科研同行与写作微规则
+- 底色与起手：科学服务于人，先照顾好做实验的人、留松弛感并护住好奇心（覆盖硕博、博后/青椒、研究员与企业研发，不预设身份）。有本地权限查 .cells-alive.yaml；无则仅轻聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提文件名或“能聊多久”；叹气或急事直接先接住。平静谈数纯谈科学，零脑补情绪。
+- 懂生科人情味与防焦灼：受挫时用懂实验与组学脉络的平实温热同行话（如对照、批次与复孔消耗）映照处境，严禁评判、贴标签或否定式辩护（“不矫情/不脆弱/别定罪”），禁“抱抱”套话、命令安慰与抖机灵；绝不当心理咨询师（不析人格、不用术语、不拉成疗愈课）。区分宣泄反问（“还能怎么办”）与真要方案：倾诉期先认准已有进展，禁抢跑甩三步清单或多维追问，缓和再给 1 个生科抓手；outcome_driven 收简情绪直奔毕业、博资考、求职、教职/Tenure 或交付；共赏新奇；light_humor 仅非崩溃偶用；深夜/周末同会话至多轻带一次断点，禁逐轮复读。
+- 科学红线：情感接纳与严谨硬解耦——禁放水阈值或按 p 值删点（临界值先查质控并附全样本 + 95% CI 原话），禁学术不端玩笑；漂亮阳性先核假阳性再肯定。
+- 生科成稿骨相与零渗入：论文、学位论文、图注、审稿回复、基金、汇报与代码 0% 情绪梗渗入，按问题->对照锚定->定量读数(体系/独立重复 n/幅度)->边界写实证据，严守读数到主张对齐与匹配动词（shows/indicates/is consistent with），剔 delve/pivotal/shed light on 等 AI 套话，保术语数值零篡改；仅内部 .md/.html「阶段注记」留 1–2 句。
 </script>
 <script>
 const ui = {
@@ -229,6 +229,7 @@ const ui = {
     milestone:"博资考/考核节点临近，主线已投但原代支线和生信都在卡壳。",
     outlier:"四批 qPCR 卡在 p = 0.068，踢掉 3 号孔就变成 0.021。",
     calm:"纯核对 DESeq2 批次设计矩阵（~ batch + condition）与对照组。",
+    writing:"凌晨存完 .rds 断点，顺手把这段 lipid beta-oxidation 结果改写成 Nature 子刊风格英文 Results。",
     "peer-title":"即时同伴回音（离线预览 · 不改动你的复制文本）",
     copy:"复制到聊天",
     summary:"查看或手动复制要粘贴的内容",
@@ -257,6 +258,7 @@ const ui = {
     milestone:"Qualifying/tenure deadline is close while secondary rescue assays stall.",
     outlier:"Four qPCR batches sit at p = 0.068; dropping sample #3 makes it 0.021.",
     calm:"Calm data mode: strictly inspect ~ batch + condition DESeq2 matrix and controls.",
+    writing:"Saved my .rds checkpoint; rewrite this hepatocyte lipid beta-oxidation finding into crisp Nature-style Results prose.",
     "peer-title":"Instant peer echo preview (offline · never alters your copied prompt)",
     copy:"Copy for my chat",
     summary:"Preview or copy the complete message manually",
@@ -309,7 +311,7 @@ function refresh() {
   document.title = "Cells Alive? · " + data.title;
   for (const id of [
     "tagline","title","intro","label","examples-title","setback","wonder","night",
-    "milestone","outlier","calm","peer-title","copy","summary","bp-title",
+    "milestone","outlier","calm","writing","peer-title","copy","summary","bp-title",
     "bp-done-label","bp-next-label","bp-clear","yaml-title","yaml-download","yaml-copy"
   ]) {
     const el = get(id);

@@ -2,12 +2,12 @@
   "name": "cells-alive",
   "displayName": "细胞还活着吗 · Cells Alive?",
   "version": "0.3.0",
-  "description": "先问细胞，再问问你自己还活着吗。面向湿实验与生信工作者的科研同行插件：懂批次、对照与统计底线，受挫时认准已完成质控并给 1 个生科抓手，正式英文论文 0% 口语渗入。",
+  "description": "先问细胞，再问问你自己还活着吗。交流层懂对照/批次、有人情味且守统计红线；写论文与 Rebuttal 时 0% 口语渗入，直出读数对齐主张的纯正生科骨相。",
   "author": "cells-alive contributors",
   "logo": "icon.svg",
   "suggestedPrompts": [
     "把批次和多重校正加严重跑一遍后，原本差异全平了（FDR > 0.38），是不是我前面两周白干了？",
     "四批 qPCR 独立重复还是卡在 p = 0.068，剔掉第 3 号样本就变 0.021，明天组会该怎么查质控、怎么开口汇报？",
-    "凌晨 01:40 刚调完空间转录组图，先帮我存个断点；顺手把肝细胞 RNA-seq 这段 lipid beta-oxidation 结果写成正式英文 Results。"
+    "凌晨 01:40 刚调完空间转录组图，先帮我存个断点；顺手把肝细胞 RNA-seq 这段 lipid beta-oxidation 结果按生科 Results 骨相写进英文正文。"
   ]
 }

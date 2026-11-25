@@ -1,26 +1,25 @@
 # Cells Alive? · Life-Science Research Companion (`dsh-plugin-cells-alive`)
 
-[简体中文](README.md) · English · [Zero-Install Offline Starter](adapters/start.html) · [Paired Eval](docs/comparison-and-showcase.md) · [Community Wall](community/README.md)
+[简体中文](README.md) · English · [Offline Starter](adapters/start.html) · [Landscape & Eval](docs/comparison-and-showcase.md) · [Bio Writing Voice](skills/cells-alive/references/bio-writing-voice.md) · [Community](community/README.md)
 
 <img src="./icon.svg" width="64" height="64" alt="Cells Alive?"/>
 
-*First check the cells. Then check on you. Science serves people first.*
+*First check the cells. Then check on you. Warm peer chat when benches stall; authentic life-science prose when writing.*
 
-A featherweight **6-line (`< 2 KB`)** research companion built for wet-lab benches and bioinformatics clusters: it understands positive controls, batch correction, and statistical red lines, skips hollow 3-step lecture checklists, and enforces **0% casual leakage** inside formal English `Results` and code.
+A **6-line (`< 2 KB`)** research companion built for wet-lab benches and bioinformatics clusters: speaks real lab shop talk without 3-step lecture checklists, guards statistical red lines, and switches cleanly to **0% casual leakage** with authentic **life-science writing craft** inside formal `Results` and `Rebuttal` drafts.
 
-![Paired life-science evaluation showcase: batch/FDR setback holding, p = 0.068 guardrail, and 0% Results leakage](docs/images/cells-alive-showcase.png)
+![Dual-layer showcase: lab-savvy peer holding, p = 0.068 guardrail, and life-science Results prose](./docs/images/cells-alive-showcase.png)
 
-## When to reach for it
+## Why the two-layer split clicks
 
-- **Negative primary-cell assays or flattened DEG re-runs**: When stricter `~ batch + condition` re-runs push hits to `FDR > 0.38` or 3 primary-cell `rescue` batches fail despite clean controls, it recognizes the QC already banked and offers **1 low-burden scientific step** (`log2FoldChange` vs `lfcSE`) instead of `"hug you"` scripts or therapy talk.
-- **Pre-lab-meeting `p = 0.068` temptations & milestone triage**: Blocks `p`-driven dropping of sample #3 (`0.021`), checks melt curves / replicate `Ct` first, and drafts clean full-sample + 95% CI wording. Adapts across PhD students, postdocs, and PIs via optional `.cells-alive.yaml` (PI mode trims **19.7%** redundant text; calm data queries get zero fluff).
-- **Midnight checkpoints before switching back to manuscript prose**: Wraps up a `01:40` spatial transcriptomics run in 2 grounded lines, then goes completely silent in formal `Nature Comms` `Results`—preserving exact terms like `lipid β-oxidation`.
+- **Warm, lab-savvy interaction layer**: When `~ batch + condition` pushes `DESeq2` hits to `FDR > 0.38` or 3 primary-cell `rescue` batches fail despite clean controls, it banks the QC already achieved and offers **1 low-burden check**—no `"hug you"` scripts or therapy talk. Refuses `p`-hacking at `p = 0.068` (`0.021`), checks melt curves/replicate `Ct` first, and drafts clean lab-meeting wording. Optional `.cells-alive.yaml` adapts across PhD students, postdocs, PIs, and R&D (PI mode trims **19.7%** redundant text).
+- **Authentic life-science writing layer (`L0`, 0% leakage)**: After saving a `01:40` `.rds` checkpoint, formal English `Results`, `Methods`, and `Rebuttal` text enforces **question -> control sensitivity gate -> quantitative readout (`n`, CI) -> bounded inference**, calibrates claims strictly to what the assay measured, strips AI clichés (`delve`, `pivotal`, `shed light on`), and preserves exact terms like `lipid β-oxidation`.
 
 ## How to use (no install required, or add as plugin)
 
 | Where you work | 30-second setup |
 | --- | --- |
-| **Web ChatGPT / Claude / DeepSeek** | Open [adapters/start.html](adapters/start.html) offline (includes **Night lamp** dark mode & local **Clean Breakpoint** note), pick a lab chip, and click **Copy for my chat**. |
+| **Web ChatGPT / Claude / DeepSeek** | Open [adapters/start.html](adapters/start.html) offline (**Night lamp** dark mode + local **Clean Breakpoint** note), pick a lab scenario, and copy. |
 | **DeepSeek Harness (DSH)** | Run `dsh plugin --profile web add (Resolve-Path '.\dsh-plugin-cells-alive-0.3.0.tgz').Path` and restart. |
 | **Codex / Claude Code / Cursor** | Copy [adapters/agents-md-snippet.md](adapters/agents-md-snippet.md), [adapters/cursor-rule.mdc](adapters/cursor-rule.mdc), or [.claude-plugin/plugin.json](.claude-plugin/plugin.json). |
 
