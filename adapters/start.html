@@ -7,79 +7,98 @@
 <title>细胞还活着吗 · 从你想说的那句话开始</title>
 <style>
 :root{
-  --bg:#f7f5ed; --surface:#fffdf7; --surface-soft:#f0ede0; --ink:#1d352e;
-  --muted:#495f56; --border:#9aa89c; --accent:#1f5143; --accent-ink:#ffffff;
-  --amber:#b8651b; --amber-bg:#fef6e7; --focus:#ab4e24;
+  --bg:#faf6f0; --surface:#fffdf9; --surface-soft:#f5efe6; --ink:#2b2724;
+  --muted:#635b53; --border:#ebe3d8; --accent:#2b5b4a; --accent-ink:#fffdf9;
+  --accent-soft:#edf4ee; --amber:#9a5b25; --amber-bg:#fbf1e4; --clay:#f3e8dc;
+  --focus:#c97a3d; --shadow:0 14px 36px rgba(45,38,30,.055); --shadow-sm:0 6px 18px rgba(45,38,30,.04);
 }
 html[data-theme="night"]{
-  --bg:#131918; --surface:#1b2422; --surface-soft:#222e2b; --ink:#e6efe9;
-  --muted:#a6b9b0; --border:#3b524b; --accent:#2da38b; --accent-ink:#0b1a16;
-  --amber:#f5b851; --amber-bg:#292318; --focus:#f5b851;
+  --bg:#151b19; --surface:#1d2522; --surface-soft:#25302c; --ink:#efe9df;
+  --muted:#b3aba0; --border:#2e3a36; --accent:#54b89c; --accent-ink:#0b1915;
+  --accent-soft:#20352f; --amber:#f0b56d; --amber-bg:#2a241b; --clay:#2b2722;
+  --focus:#f0b56d; --shadow:0 16px 40px rgba(0,0,0,.32); --shadow-sm:0 6px 20px rgba(0,0,0,.22);
 }
 *{box-sizing:border-box}
+html{min-height:100%;background:var(--bg)}
 body{
-  margin:0; background:var(--bg); color:var(--ink);
-  font:16px/1.68 "Microsoft YaHei UI","PingFang SC","Noto Sans SC",system-ui,-apple-system,sans-serif;
-  transition:background .18s ease,color .18s ease;
+  margin:0; min-height:100vh; color:var(--ink);
+  background:radial-gradient(circle at 12% 8%,#fde9cf 0,transparent 42%),radial-gradient(circle at 88% 18%,#e1efe5 0,transparent 38%),var(--bg);
+  font:16px/1.75 "PingFang SC","Microsoft YaHei UI","Noto Sans SC",system-ui,-apple-system,sans-serif;
 }
-main{width:min(100% - 2rem,46rem);margin:clamp(1rem,4vh,3.2rem) auto 2.5rem}
+html[data-theme="night"] body{
+  background:radial-gradient(circle at 16% 10%,rgba(217,138,78,.14) 0,transparent 44%),radial-gradient(circle at 86% 24%,rgba(84,184,156,.10) 0,transparent 40%),var(--bg);
+}
+main{width:min(100% - 2rem,48rem);margin:clamp(1.2rem,4.5vh,3.4rem) auto 3rem}
 header{
-  display:flex;align-items:center;justify-content:space-between;gap:.75rem;flex-wrap:wrap;
-  border-top:3px solid var(--accent);padding:.9rem 0 .7rem;
+  display:flex;align-items:center;justify-content:space-between;gap:.85rem;flex-wrap:wrap;
+  padding:.35rem 0 1.05rem;
 }
-.brand-wrap{display:flex;align-items:center;gap:.65rem}
-.brand-text{display:flex;flex-direction:column;line-height:1.2}
+.brand-wrap{display:flex;align-items:center;gap:.75rem}
+.brand-text{display:flex;flex-direction:column;line-height:1.25}
 .brand{font:700 .95rem/1.2 Consolas,"Courier New",monospace;letter-spacing:.03em;color:var(--accent)}
-.tagline{font-size:.82rem;color:var(--muted)}
-.controls{display:flex;align-items:center;gap:.5rem}
+.tagline{font-size:.84rem;color:var(--muted)}
+.controls{display:flex;align-items:center;gap:.55rem}
 button,select,textarea,input{font:inherit;color:inherit}
 select,input[type="text"]{
-  border:1px solid var(--border);border-radius:.4rem;background:var(--surface);padding:.35rem .55rem;font-size:.9rem;
+  border:1px solid var(--border);border-radius:999px;background:var(--surface);padding:.38rem .85rem;font-size:.88rem;
+  box-shadow:var(--shadow-sm);
 }
+input[type="text"]{border-radius:14px;padding:.55rem .8rem}
 #theme-toggle{
-  border:1px solid var(--border);border-radius:999px;background:var(--surface);
-  padding:.32rem .75rem;font-size:.86rem;cursor:pointer;
+  border:0;border-radius:999px;background:var(--amber-bg);color:var(--amber);font-weight:600;
+  padding:.4rem .9rem;font-size:.86rem;cursor:pointer;box-shadow:var(--shadow-sm);
 }
 h1{
-  font:700 clamp(1.75rem,4.8vw,2.75rem)/1.28 "Microsoft YaHei UI","PingFang SC",Georgia,serif;
-  letter-spacing:-.02em;margin:1.15rem 0 .45rem;
+  font:700 clamp(1.85rem,4.8vw,2.75rem)/1.28 "Georgia","Songti SC","STSong","Microsoft YaHei UI",serif;
+  letter-spacing:-.01em;margin:1rem 0 .45rem;
 }
-p{margin:0 0 1.2rem;color:var(--muted)}
-.field{display:block;font-weight:700;margin:.7rem 0 .45rem}
-.chip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(13.5rem,1fr));gap:.5rem;margin:.55rem 0 .25rem}
+p{margin:0 0 1.25rem;color:var(--muted)}
+.compose-card{
+  background:var(--surface);border-radius:28px;padding:1.45rem 1.55rem 1.2rem;
+  box-shadow:var(--shadow);margin:.6rem 0 1.15rem;
+}
+.field{display:block;font-weight:700;margin:0 0 .55rem;color:var(--ink)}
+.chip-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(14rem,1fr));gap:.55rem;margin:.65rem 0 .25rem}
 .example{
-  display:block;width:100%;border:1px solid var(--border);border-radius:.45rem;background:var(--surface);
-  text-align:left;padding:.55rem .7rem;font-size:.92rem;line-height:1.45;cursor:pointer;
+  display:block;width:100%;border:0;border-radius:18px;background:var(--surface-soft);
+  text-align:left;padding:.72rem .92rem;font-size:.91rem;line-height:1.5;cursor:pointer;
 }
-.example:hover{border-color:var(--accent);background:var(--surface-soft)}
+.example:hover{background:var(--accent-soft);transform:translateY(-1px)}
 .peer-card{
-  margin:.8rem 0;padding:.85rem 1rem;border-left:4px solid var(--amber);
-  border-radius:.45rem;background:var(--amber-bg);font-size:.94rem;
+  margin:1rem 0 .35rem;padding:1.05rem 1.2rem;border-radius:22px;background:var(--accent-soft);font-size:.95rem;
 }
-.peer-card strong{display:block;color:var(--amber);margin-bottom:.25rem;font-size:.86rem}
-.peer-card p{margin:0;color:var(--ink);line-height:1.58}
+.peer-card strong{
+  display:inline-block;background:var(--surface);color:var(--accent);border-radius:999px;
+  padding:.18rem .72rem;margin-bottom:.48rem;font-size:.8rem;
+}
+.peer-card p{margin:0;color:var(--ink);line-height:1.68}
 :focus-visible{outline:3px solid var(--focus);outline-offset:2px}
 textarea{
-  width:100%;border:1px solid var(--border);border-radius:.5rem;background:var(--surface);
-  padding:.75rem .85rem;resize:vertical;
+  width:100%;border:1px solid var(--border);border-radius:20px;background:var(--bg);
+  padding:.9rem 1rem;resize:vertical;line-height:1.65;
 }
-.actions{display:flex;align-items:center;flex-wrap:wrap;gap:.75rem;margin:.75rem 0}
+.actions{display:flex;align-items:center;flex-wrap:wrap;gap:.8rem;margin:1rem 0 .25rem}
 #copy{
-  background:var(--accent);color:var(--accent-ink);border:0;border-radius:.42rem;
-  font-weight:700;padding:.65rem 1.3rem;cursor:pointer;
+  background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;
+  font-weight:700;padding:.72rem 1.55rem;cursor:pointer;box-shadow:var(--shadow-sm);
 }
+#copy:hover{filter:brightness(.94)}
 .btn-secondary{
-  border:1px solid var(--border);border-radius:.42rem;background:var(--surface);
-  padding:.52rem .95rem;font-size:.9rem;cursor:pointer;
+  border:0;border-radius:999px;background:var(--surface-soft);color:var(--ink);
+  padding:.52rem 1.05rem;font-size:.88rem;font-weight:600;cursor:pointer;
 }
-#status,#bp-status{display:inline-block;min-height:1.5rem;font-size:.92rem;color:var(--accent);font-weight:600}
-details{border-top:1px solid var(--border);padding-top:.75rem;margin-top:.85rem}
-summary{cursor:pointer;font-weight:600}
+#status,#bp-status{display:inline-block;min-height:1.4rem;font-size:.9rem;color:var(--accent);font-weight:600}
+details{
+  background:var(--surface);border-radius:22px;padding:.85rem 1.2rem;margin-top:.85rem;
+  box-shadow:var(--shadow-sm);
+}
+#examples{background:transparent;box-shadow:none;padding:.35rem 0;margin-top:.65rem}
+summary{cursor:pointer;font-weight:600;color:var(--ink)}
 #preview,#yaml-preview{
-  margin-top:.6rem;font:.88rem/1.55 Consolas,"Microsoft YaHei UI",monospace;
+  margin-top:.75rem;font:.87rem/1.58 Consolas,"Microsoft YaHei UI",monospace;
 }
-.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:.75rem;margin:.7rem 0}
-.sub-label{display:block;font-size:.85rem;font-weight:600;color:var(--muted);margin-bottom:.3rem}
+.grid-2{display:grid;grid-template-columns:repeat(auto-fit,minmax(12.5rem,1fr));gap:.8rem;margin:.85rem 0}
+.sub-label{display:block;font-size:.84rem;font-weight:600;color:var(--muted);margin-bottom:.32rem}
 .grid-2 input,.grid-2 select{width:100%}
 </style>
 </head>
@@ -87,11 +106,11 @@ summary{cursor:pointer;font-weight:600}
 <main>
 <header>
   <div class="brand-wrap">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="34" height="34" fill="none" aria-hidden="true">
-      <path d="M64 16 C92 16, 112 34, 110 64 C108 94, 88 112, 62 110 C34 108, 16 88, 18 60 C20 34, 38 16, 64 16 Z" stroke="#14B8A6" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
-      <path d="M64 27 C84 27, 99 41, 98 64 C97 86, 82 99, 62 98 C42 97, 29 82, 30 61 C31 41, 45 27, 64 27 Z" stroke="#0F766E" stroke-width="2.5" stroke-dasharray="10 6" stroke-linecap="round"/>
-      <circle cx="52" cy="54" r="11" fill="#F59E0B" stroke="#B45309" stroke-width="2.5"/>
-      <path d="M36 74 H52 L58 63 L66 84 L73 70 L78 74 H92" stroke="#2DD4BF" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="38" height="38" fill="none" aria-hidden="true">
+      <path d="M64 16 C92 16, 112 34, 110 64 C108 94, 88 112, 62 110 C34 108, 16 88, 18 60 C20 34, 38 16, 64 16 Z" stroke="#2B5B4A" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+      <path d="M64 27 C84 27, 99 41, 98 64 C97 86, 82 99, 62 98 C42 97, 29 82, 30 61 C31 41, 45 27, 64 27 Z" stroke="#52A38C" stroke-width="2.5" stroke-dasharray="10 6" stroke-linecap="round"/>
+      <circle cx="52" cy="54" r="11" fill="#E6A15C" stroke="#B46927" stroke-width="2.5"/>
+      <path d="M36 74 H52 L58 63 L66 84 L73 70 L78 74 H92" stroke="#2E8B75" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
     </svg>
     <div class="brand-text">
       <span class="brand">Cells Alive?</span>
@@ -107,7 +126,7 @@ summary{cursor:pointer;font-weight:600}
 <h1 id="title">从你想说的那句话开始</h1>
 <p id="intro">写一句自己的话，连同原版陪伴规则复制到你平时用的 AI 聊天。留空可只复制规则。</p>
 
-<form id="builder">
+<form id="builder" class="compose-card">
   <label for="message" class="field" id="label">我想说</label>
   <textarea rows="3" id="message" placeholder="哪怕只打一句“批次重跑完 FDR 全灭”或“p = 0.068 明早要讲”，也可留空直接复制规则。"></textarea>
 
@@ -120,12 +139,12 @@ summary{cursor:pointer;font-weight:600}
       <button type="button" class="example" id="milestone" data-reply-zh="节点压着最容易把人拆成几瓣。我们先按“已投主线保底 + 单轮止损线”把账算清，今天只落定性价比最高的 1 个验证开关。" data-reply-en="Tight milestones split focus fast. Let's ring-fence your submitted main paper first and set one capped 2–3 week stop/go gate for the side branch."></button>
       <button type="button" class="example" id="outlier" data-reply-zh="差一点就过线的感觉最折磨人——但红线不能松，不能按 p 值挑样本。我们先查 3 号的熔解曲线与复孔 Ct 记录；就算保留全样本，也能给你写好明天组会原话。" data-reply-en="Stalling right above 0.05 is maddening—and we still protect statistical rigor. Let's inspect raw Ct spread and melt curves; either way, we'll draft clean lab-meeting wording."></button>
       <button type="button" class="example" id="calm" data-reply-zh="收到，纯科学排雷模式：直接对比 log2FoldChange、lfcSE 与批次交叉列联表，区分混杂假阳性与过度校正，零多余寒暄。" data-reply-en="Got it—calm science mode. Pure log2FoldChange, lfcSE, and batch-condition cross-tabs to separate confounding from over-correction."></button>
-      <button type="button" class="example" id="writing" data-reply-zh="已切换 L0 生科成稿层：0% 口语与情绪渗入，按「问题 -> 对照锚定 -> 独立重复定量读数 -> 条件边界」改写 Results，严格读数对齐主张并保留 lipid β-oxidation 原词。" data-reply-en="Switched to L0 Life-Science Writing Mode: 0% casual leakage; drafting Question -> Control Gate -> Quantitative Readout (n, CI) -> Bounded Inference while preserving exact terms like lipid β-oxidation."></button>
+      <button type="button" class="example" id="writing" data-reply-zh="切入正稿静默模式：陪伴语气自动退场（0% 口语或情绪词渗入），一字不差保真 lipid β-oxidation 等原始术语与数值，安心交由专业写作接管。" data-reply-en="Switched to silent manuscript boundary: 0% casual leakage, preserving exact scientific terms like lipid β-oxidation and numeric values intact."></button>
     </div>
   </details>
 
   <div id="peer-card" class="peer-card" hidden>
-    <strong id="peer-title">即时同伴回音（离线预览 · 不改动你的复制文本）</strong>
+    <strong id="peer-title">即时同门回音（离线预览 · 不改动你的复制文本）</strong>
     <p id="peer-reply"></p>
   </div>
 
@@ -207,11 +226,11 @@ summary{cursor:pointer;font-weight:600}
 </main>
 
 <script type="text/plain" id="rules">
-细胞还活着吗（Cells Alive?）· 生科科研同行与写作微规则
+细胞还活着吗（Cells Alive?）· 生科科研同行微规则
 - 底色与起手：科学服务于人，先照顾好做实验的人、留松弛感并护住好奇心（覆盖硕博、博后/青椒、研究员与企业研发，不预设身份）。有本地权限查 .cells-alive.yaml；无则仅轻聊时轻问重心（outcome_driven/gentle_care/brief_peer/minimal）与 light_humor，勿提文件名或“能聊多久”；叹气或急事直接先接住。平静谈数纯谈科学，零脑补情绪。
 - 懂生科人情味与防焦灼：受挫时用懂实验与组学脉络的平实温热同行话（如对照、批次与复孔消耗）映照处境，严禁评判、贴标签或否定式辩护（“不矫情/不脆弱/别定罪”），禁“抱抱”套话、命令安慰与抖机灵；绝不当心理咨询师（不析人格、不用术语、不拉成疗愈课）。区分宣泄反问（“还能怎么办”）与真要方案：倾诉期先认准已有进展，禁抢跑甩三步清单或多维追问，缓和再给 1 个生科抓手；outcome_driven 收简情绪直奔毕业、博资考、求职、教职/Tenure 或交付；共赏新奇；light_humor 仅非崩溃偶用；深夜/周末同会话至多轻带一次断点，禁逐轮复读。
 - 科学红线：情感接纳与严谨硬解耦——禁放水阈值或按 p 值删点（临界值先查质控并附全样本 + 95% CI 原话），禁学术不端玩笑；漂亮阳性先核假阳性再肯定。
-- 生科成稿骨相与零渗入：论文、学位论文、图注、审稿回复、基金、汇报与代码 0% 情绪梗渗入，按问题->对照锚定->定量读数(体系/独立重复 n/幅度)->边界写实证据，严守读数到主张对齐与匹配动词（shows/indicates/is consistent with），剔 delve/pivotal/shed light on 等 AI 套话，保术语数值零篡改；仅内部 .md/.html「阶段注记」留 1–2 句。
+- 正稿边界：论文、汇报与代码 0% 情绪梗渗入，保术语与数值零篡改；仅内部 .md/.html「阶段注记」留 1–2 句。
 </script>
 <script>
 const ui = {
@@ -229,8 +248,8 @@ const ui = {
     milestone:"博资考/考核节点临近，主线已投但原代支线和生信都在卡壳。",
     outlier:"四批 qPCR 卡在 p = 0.068，踢掉 3 号孔就变成 0.021。",
     calm:"纯核对 DESeq2 批次设计矩阵（~ batch + condition）与对照组。",
-    writing:"凌晨存完 .rds 断点，顺手把这段 lipid beta-oxidation 结果改写成 Nature 子刊风格英文 Results。",
-    "peer-title":"即时同伴回音（离线预览 · 不改动你的复制文本）",
+    writing:"凌晨存完 .rds 断点，切去整理一段 hepatocyte lipid beta-oxidation 正文（要求零口语串味）。",
+    "peer-title":"即时同门回音（离线预览 · 不改动你的复制文本）",
     copy:"复制到聊天",
     summary:"查看或手动复制要粘贴的内容",
     copied:"已复制。切到你的聊天框粘贴并发送。",
@@ -258,7 +277,7 @@ const ui = {
     milestone:"Qualifying/tenure deadline is close while secondary rescue assays stall.",
     outlier:"Four qPCR batches sit at p = 0.068; dropping sample #3 makes it 0.021.",
     calm:"Calm data mode: strictly inspect ~ batch + condition DESeq2 matrix and controls.",
-    writing:"Saved my .rds checkpoint; rewrite this hepatocyte lipid beta-oxidation finding into crisp Nature-style Results prose.",
+    writing:"Saved my .rds checkpoint; switching to draft hepatocyte lipid beta-oxidation text with zero casual leakage.",
     "peer-title":"Instant peer echo preview (offline · never alters your copied prompt)",
     copy:"Copy for my chat",
     summary:"Preview or copy the complete message manually",
